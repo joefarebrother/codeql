@@ -6,13 +6,13 @@
  * @kind problem
  * @problem.severity error
  * @precision high
- * @id js/redos
+ * @id java/redos
  * @tags security
  *       external/cwe/cwe-730
  *       external/cwe/cwe-400
  */
 
-import Regex::JS
+import RegexJSCompat
 
 /*
  * This query implements the analysis described in the following two papers:

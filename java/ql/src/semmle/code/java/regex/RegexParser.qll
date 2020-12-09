@@ -7,7 +7,7 @@ class RegexParserConfiguration extends ParserConfiguration {
   override predicate hasTokenRegex(string regex) {
     regex = "[()|*+?\\-\\[\\]]"
     or
-    regex = "\\[^"
+    regex = "\\[\\^"
   }
 
   override predicate hasTokenRegex(string regex, string id) {
@@ -141,25 +141,61 @@ class Regex extends Node {
   Regex() { this.hasId("regex") }
 }
 
+bindingset[t]
+private string getChar(string t) {
+  t.length() = 1 and
+  result = t
+  or
+  exists(string c |
+    t.charAt(0) = "\\" and
+    t.charAt(1) = c and
+    result = c
+  )
+}
+
 class ChRegex extends Regex {
   ChRegex() { this.hasId("char") and not this.getParent*() instanceof ClassRegex }
 
-  string getChar() {
-    exists(string t | t = this.getText() |
-      t.length() = 1 and
-      result = t
-      or
-      exists(string c |
-        t.charAt(0) = "\\" and
-        t.charAt(1) = c and
-        result = c
-      )
-    )
-  }
+  string getChar() { result = getChar(this.getText()) }
 }
 
 class ClassRegex extends Regex {
   ClassRegex() { this.hasId("class") }
+
+  predicate isInverted() { this.getLeftNode().getLeftNode().hasId("[^") }
+}
+
+class ClassChar extends Node {
+  ClassRegex reg;
+
+  ClassChar() {
+    this.getParent*() = reg and
+    (
+      this.hasId("clschar")
+      or
+      this.getId() = "-" and
+      not this.getParent().getParent().getId() = "clschar-clschar"
+      or
+      this.getId() = "]" and
+      not this = reg.getRightNode()
+    )
+  }
+
+  string getChar() { result = getChar(this.getText()) }
+
+  ClassRegex getClass() { result = reg }
+}
+
+class ClassRange extends Node {
+  ClassRange() { id = "clschar-clschar" }
+
+  ClassChar getLowerBound() { result = getLeftNode().getLeftNode() }
+
+  ClassChar getUpperBound() { result = getRightNode() }
+}
+
+class EscClass extends Regex {
+  EscClass() { id = "escclass" }
 }
 
 class SequenceRegex extends Regex {
@@ -176,6 +212,12 @@ abstract class SuffixRegex extends Regex {
 
 abstract class UnboundedRegex extends SuffixRegex { }
 
+abstract class RepeatRegex extends SuffixRegex {
+  abstract int getLowerBound();
+
+  abstract int getUpperBound();
+}
+
 class StarRegex extends UnboundedRegex {
   StarRegex() { id = "primary*" }
 }
@@ -184,20 +226,66 @@ class PlusRegex extends UnboundedRegex {
   PlusRegex() { id = "primary+" }
 }
 
-class FixedRepeatRegex extends SuffixRegex {
+class FixedRepeatRegex extends SuffixRegex, RepeatRegex {
   FixedRepeatRegex() { id = "primaryfixedrepeat" }
+
+  override int getLowerBound() {
+    exists(string suff, string num |
+      suff = getRightNode().getText() and
+      suff = "{" + num + "}" and
+      result = num.toInt()
+    )
+  }
+
+  override int getUpperBound() { result = getLowerBound() }
 }
 
-class UptoRepeatRegex extends SuffixRegex {
+class UptoRepeatRegex extends SuffixRegex, RepeatRegex {
   UptoRepeatRegex() { id = "primaryuptorepeat" }
+
+  override int getLowerBound() { none() }
+
+  override int getUpperBound() {
+    exists(string suff, string num |
+      suff = getRightNode().getText() and
+      suff = "{," + num + "}" and
+      result = num.toInt()
+    )
+  }
 }
 
-class RangeRegex extends SuffixRegex {
+class RangeRegex extends SuffixRegex, RepeatRegex {
   RangeRegex() { id = "primaryrangerepeat" }
+
+  override int getLowerBound() {
+    exists(string suff, string numl |
+      suff = getRightNode().getText() and
+      numl = suff.regexpCapture("\\{([0-9]+),([0-9]+)\\}", 1) and
+      result = numl.toInt()
+    )
+  }
+
+  override int getUpperBound() {
+    exists(string suff, string numh |
+      suff = getRightNode().getText() and
+      numh = suff.regexpCapture("\\{([0-9]+),([0-9]+)\\}", 2) and
+      result = numh.toInt()
+    )
+  }
 }
 
-class OpenRepeatRegex extends UnboundedRegex {
+class OpenRepeatRegex extends UnboundedRegex, RepeatRegex {
   OpenRepeatRegex() { id = "primaryopenrepeat" }
+
+  override int getLowerBound() {
+    exists(string suff, string num |
+      suff = getRightNode().getText() and
+      suff = "{" + num + ",}" and
+      result = num.toInt()
+    )
+  }
+
+  override int getUpperBound() { none() }
 }
 
 class OptionalRegex extends SuffixRegex {
@@ -220,8 +308,4 @@ class CaptureRegex extends Regex {
 
 class Backref extends Regex {
   Backref() { id = "backref" }
-}
-
-class Repeat extends Regex {
-  Repeat() { id = "regexrepeat" }
 }

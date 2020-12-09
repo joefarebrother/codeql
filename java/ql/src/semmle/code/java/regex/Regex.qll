@@ -1,7 +1,7 @@
 import java
 import RegexOperations
-import RegexParser as P
-import semmle.code.java.dataflow.DataFlow3
+private import RegexParser
+private import semmle.code.java.dataflow.DataFlow3
 
 class RegexLiteralConfig extends DataFlow3::Configuration {
   RegexLiteralConfig() { this = "RegexLiteralConfig" }
@@ -13,7 +13,7 @@ class RegexLiteralConfig extends DataFlow3::Configuration {
   }
 }
 
-class RegexLiteral extends P::ParsedString {
+class RegexLiteral extends ParsedString {
   StringLiteral lit;
 
   RegexLiteral() {
@@ -24,18 +24,15 @@ class RegexLiteral extends P::ParsedString {
     )
   }
 
-  override P::ParserConfiguration getConfiguration() {
-    result instanceof P::RegexParserConfiguration
-  }
+  override ParserConfiguration getConfiguration() { result instanceof RegexParserConfiguration }
 
   override predicate getLocationInfo(
     string file, int startline, int startcol, int endline, int endcol
   ) {
-    lit.hasLocationInfo(file, startline, startcol, endline, endcol)
+    lit.hasLocationInfo(file, startline, startcol - 1, endline, endcol - 1)
   }
 }
 
-/** Compatibility with the javascript QL regex library */
-module JS {
-  // TODO
-}
+query predicate rootRegexes(Regex regex) { regex.isRoot() }
+
+query predicate unrootedRegexes(Regex regex) { not regex.isRooted() }

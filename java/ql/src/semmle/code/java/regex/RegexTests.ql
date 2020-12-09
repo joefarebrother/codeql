@@ -50,6 +50,18 @@ query predicate orRegexes(OrRegex regex, Regex left, Regex right) {
 
 query predicate captures(CaptureRegex capture, Regex contents) { contents = capture.getBody() }
 
-query predicate classes(ClassRegex cls) { any() }
+query predicate classes(ClassRegex cls, boolean inv) {
+  if cls.isInverted() then inv = true else inv = false
+}
 
 query predicate chars(ChRegex ch, string char) { char = ch.getChar() }
+
+query predicate classChars(ClassChar ch, string char, ClassRegex reg) {
+  char = ch.getChar() and reg = ch.getClass()
+}
+
+query predicate ranges(RepeatRegex rep, Regex body, int lo, int hi) {
+  rep.getBody() = body and
+  (if exists(rep.getLowerBound()) then lo = rep.getLowerBound() else lo = -1) and
+  (if exists(rep.getUpperBound()) then hi = rep.getUpperBound() else hi = -1)
+}
