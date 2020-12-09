@@ -12,7 +12,7 @@
  *       external/cwe/cwe-400
  */
 
-import javascript
+import Regex::JS
 
 /*
  * This query implements the analysis described in the following two papers:
