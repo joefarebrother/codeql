@@ -32,7 +32,3 @@ class RegexLiteral extends ParsedString {
     lit.hasLocationInfo(file, startline, startcol - 1, endline, endcol - 1)
   }
 }
-
-query predicate rootRegexes(Regex regex) { regex.isRoot() }
-
-query predicate unrootedRegexes(Regex regex) { not regex.isRooted() }

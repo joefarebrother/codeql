@@ -1,5 +1,5 @@
 /** Defenitions for compatibility with the JS ReDoS query */
 
 import java
-import Regex
+import RegexLiteral
 import RegexParser as P

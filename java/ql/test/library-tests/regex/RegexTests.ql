@@ -1,23 +1,5 @@
-import RegexParser
-// class RegexTestString extends ParsedString {
-//   RegexTestString() {
-//     this = "abcd|efgh|ijkl" or
-//     this = "a*" or
-//     this = "(abc)*x+y?" or
-//     this = "(.)\\1" or
-//     this = "[0-9]+" or
-//     this = "X{4}{1,3}{,1}{3,}" or
-//     this = "(?:you)+\\d+" or
-//     this = "\\d+[:alpha:]" or
-//     this = "[]]" or
-//     this = "[^a-z\\d-]" or
-//     this = "[-xyz]" or
-//     this = "\\(\\)[()\\]]"
-//   }
-//   override predicate getLocationInfo(string file, int col, int row, int col2, int row2) { none() }
-//   override ParserConfiguration getConfiguration() { result instanceof RegexParserConfiguration }
-// }
-import RegexLiteral
+import semmle.code.java.regex.RegexLiteral
+import semmle.code.java.regex.RegexParser
 
 query predicate tokens(Token token, string id) { id = token.getId() }
 
@@ -63,3 +45,6 @@ query predicate ranges(RepeatRegex rep, Regex body, int lo, int hi) {
   (if exists(rep.getLowerBound()) then lo = rep.getLowerBound() else lo = -1) and
   (if exists(rep.getUpperBound()) then hi = rep.getUpperBound() else hi = -1)
 }
+
+from RegexLiteral re
+select re
