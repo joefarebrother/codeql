@@ -9,7 +9,11 @@ class RegexTestString extends ParsedString {
     this = "[0-9]+" or
     this = "X{4}{1,3}{,1}{3,}" or
     this = "(?:you)+\\d+" or
-    this = "\\d+[:alpha:]"
+    this = "\\d+[:alpha:]" or
+    this = "[]]" or
+    this = "[^a-z\\d-]" or
+    this = "[-xyz]" or
+    this = "\\(\\)[()\\]]"
   }
 
   override predicate getLocationInfo(string file, int col, int row, int col2, int row2) { none() }
@@ -45,3 +49,7 @@ query predicate orRegexes(OrRegex regex, Regex left, Regex right) {
 }
 
 query predicate captures(CaptureRegex capture, Regex contents) { contents = capture.getBody() }
+
+query predicate classes(ClassRegex cls) { any() }
+
+query predicate chars(ChRegex ch, string char) { char = ch.getChar() }
