@@ -25,7 +25,7 @@ class RegexParserConfiguration extends ParserConfiguration {
     or
     regex = "\\{[0-9]+,\\}" and id = "openrepeat"
     or
-    regex = "\\\\[(){}\\[\\]\\\\trnNhvVR-]" and id = "normalchar"
+    regex = "\\\\[^DdwWsS0-9]" and id = "normalchar"
     or
     regex = "\\\\[DdwWsS]" and id = "escclass"
     or
@@ -81,7 +81,7 @@ class RegexParserConfiguration extends ParserConfiguration {
     a in ["normalchar", "-", "]"] and
     result = "char"
     or
-    a in ["normalchar", "(", ")", ".", "|"] and result = "clschar"
+    a in ["normalchar", "()|+-*?".charAt(_)] and result = "clschar"
     or
     a = "escclass" and result = "class"
     or

@@ -42,3 +42,5 @@ class RegexLiteral extends StringLiteral {
 
   Regex getRegex() { result.getText() = val and result.isRoot() }
 }
+
+predicate unp(RegexLiteral unp) { not exists(unp.getRegex()) }

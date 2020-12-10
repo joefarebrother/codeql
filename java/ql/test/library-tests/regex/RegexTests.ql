@@ -46,5 +46,7 @@ query predicate ranges(RepeatRegex rep, Regex body, int lo, int hi) {
   (if exists(rep.getUpperBound()) then hi = rep.getUpperBound() else hi = -1)
 }
 
+query predicate unparsed(RegexLiteral re) { not exists(re.getRegex()) }
+
 from RegexLiteral re
 select re, re.getRegex()

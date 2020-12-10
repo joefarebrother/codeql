@@ -82,6 +82,24 @@ tokens
 | A.java:16:32:16:32 | ) | ) |
 | A.java:16:33:16:34 | \\] | normalchar |
 | A.java:16:35:16:35 | ] | ] |
+| A.java:17:26:17:26 | ( | ( |
+| A.java:17:27:17:27 | [ | [ |
+| A.java:17:28:17:28 | + | + |
+| A.java:17:29:17:29 | \| | \| |
+| A.java:17:30:17:30 | - | - |
+| A.java:17:31:17:31 | ] | ] |
+| A.java:17:32:17:32 | ) | ) |
+| A.java:17:33:17:33 | ? | ? |
+| A.java:17:34:17:34 | ( | ( |
+| A.java:17:35:17:36 | \\d | escclass |
+| A.java:17:37:17:37 | + | + |
+| A.java:17:38:17:38 | ) | ) |
+| A.java:17:39:17:39 | - | - |
+| A.java:17:40:17:40 | ( | ( |
+| A.java:17:41:17:42 | \\d | escclass |
+| A.java:17:43:17:43 | + | + |
+| A.java:17:44:17:44 | ) | ) |
+| A.java:18:26:18:26 | [ | [ |
 tokens2
 | A.java:5:26:5:26 | a | char |
 | A.java:5:26:5:26 | a | classinner |
@@ -254,6 +272,12 @@ tokens2
 | A.java:6:26:6:26 | a | regex |
 | A.java:6:26:6:26 | a | seqregex |
 | A.java:6:27:6:27 | * | * |
+| A.java:6:27:6:27 | * | classinner |
+| A.java:6:27:6:27 | * | classinner1 |
+| A.java:6:27:6:27 | * | classinner2 |
+| A.java:6:27:6:27 | * | classpart |
+| A.java:6:27:6:27 | * | classstart |
+| A.java:6:27:6:27 | * | clschar |
 | A.java:7:26:7:26 | ( | ( |
 | A.java:7:26:7:26 | ( | classinner |
 | A.java:7:26:7:26 | ( | classinner1 |
@@ -305,6 +329,12 @@ tokens2
 | A.java:7:30:7:30 | ) | classstart |
 | A.java:7:30:7:30 | ) | clschar |
 | A.java:7:31:7:31 | * | * |
+| A.java:7:31:7:31 | * | classinner |
+| A.java:7:31:7:31 | * | classinner1 |
+| A.java:7:31:7:31 | * | classinner2 |
+| A.java:7:31:7:31 | * | classpart |
+| A.java:7:31:7:31 | * | classstart |
+| A.java:7:31:7:31 | * | clschar |
 | A.java:7:32:7:32 | x | char |
 | A.java:7:32:7:32 | x | classinner |
 | A.java:7:32:7:32 | x | classinner1 |
@@ -318,6 +348,12 @@ tokens2
 | A.java:7:32:7:32 | x | regex |
 | A.java:7:32:7:32 | x | seqregex |
 | A.java:7:33:7:33 | + | + |
+| A.java:7:33:7:33 | + | classinner |
+| A.java:7:33:7:33 | + | classinner1 |
+| A.java:7:33:7:33 | + | classinner2 |
+| A.java:7:33:7:33 | + | classpart |
+| A.java:7:33:7:33 | + | classstart |
+| A.java:7:33:7:33 | + | clschar |
 | A.java:7:34:7:34 | y | char |
 | A.java:7:34:7:34 | y | classinner |
 | A.java:7:34:7:34 | y | classinner1 |
@@ -331,6 +367,12 @@ tokens2
 | A.java:7:34:7:34 | y | regex |
 | A.java:7:34:7:34 | y | seqregex |
 | A.java:7:35:7:35 | ? | ? |
+| A.java:7:35:7:35 | ? | classinner |
+| A.java:7:35:7:35 | ? | classinner1 |
+| A.java:7:35:7:35 | ? | classinner2 |
+| A.java:7:35:7:35 | ? | classpart |
+| A.java:7:35:7:35 | ? | classstart |
+| A.java:7:35:7:35 | ? | clschar |
 | A.java:8:26:8:26 | ( | ( |
 | A.java:8:26:8:26 | ( | classinner |
 | A.java:8:26:8:26 | ( | classinner1 |
@@ -371,7 +413,11 @@ tokens2
 | A.java:9:28:9:28 | - | - |
 | A.java:9:28:9:28 | - | char |
 | A.java:9:28:9:28 | - | classinner |
+| A.java:9:28:9:28 | - | classinner1 |
+| A.java:9:28:9:28 | - | classinner2 |
+| A.java:9:28:9:28 | - | classpart |
 | A.java:9:28:9:28 | - | classstart |
+| A.java:9:28:9:28 | - | clschar |
 | A.java:9:28:9:28 | - | orregex |
 | A.java:9:28:9:28 | - | primary |
 | A.java:9:28:9:28 | - | regex |
@@ -397,6 +443,12 @@ tokens2
 | A.java:9:30:9:30 | ] | regex |
 | A.java:9:30:9:30 | ] | seqregex |
 | A.java:9:31:9:31 | + | + |
+| A.java:9:31:9:31 | + | classinner |
+| A.java:9:31:9:31 | + | classinner1 |
+| A.java:9:31:9:31 | + | classinner2 |
+| A.java:9:31:9:31 | + | classpart |
+| A.java:9:31:9:31 | + | classstart |
+| A.java:9:31:9:31 | + | clschar |
 | A.java:10:26:10:26 | X | char |
 | A.java:10:26:10:26 | X | classinner |
 | A.java:10:26:10:26 | X | classinner1 |
@@ -464,6 +516,12 @@ tokens2
 | A.java:11:32:11:32 | ) | classstart |
 | A.java:11:32:11:32 | ) | clschar |
 | A.java:11:33:11:33 | + | + |
+| A.java:11:33:11:33 | + | classinner |
+| A.java:11:33:11:33 | + | classinner1 |
+| A.java:11:33:11:33 | + | classinner2 |
+| A.java:11:33:11:33 | + | classpart |
+| A.java:11:33:11:33 | + | classstart |
+| A.java:11:33:11:33 | + | clschar |
 | A.java:11:34:11:35 | \\d | class |
 | A.java:11:34:11:35 | \\d | classinner |
 | A.java:11:34:11:35 | \\d | classinner1 |
@@ -476,6 +534,12 @@ tokens2
 | A.java:11:34:11:35 | \\d | regex |
 | A.java:11:34:11:35 | \\d | seqregex |
 | A.java:11:36:11:36 | + | + |
+| A.java:11:36:11:36 | + | classinner |
+| A.java:11:36:11:36 | + | classinner1 |
+| A.java:11:36:11:36 | + | classinner2 |
+| A.java:11:36:11:36 | + | classpart |
+| A.java:11:36:11:36 | + | classstart |
+| A.java:11:36:11:36 | + | clschar |
 | A.java:12:26:12:27 | \\d | class |
 | A.java:12:26:12:27 | \\d | classinner |
 | A.java:12:26:12:27 | \\d | classinner1 |
@@ -488,6 +552,12 @@ tokens2
 | A.java:12:26:12:27 | \\d | regex |
 | A.java:12:26:12:27 | \\d | seqregex |
 | A.java:12:28:12:28 | + | + |
+| A.java:12:28:12:28 | + | classinner |
+| A.java:12:28:12:28 | + | classinner1 |
+| A.java:12:28:12:28 | + | classinner2 |
+| A.java:12:28:12:28 | + | classpart |
+| A.java:12:28:12:28 | + | classstart |
+| A.java:12:28:12:28 | + | clschar |
 | A.java:12:29:12:29 | [ | [ |
 | A.java:12:30:12:30 | : | char |
 | A.java:12:30:12:30 | : | classinner |
@@ -614,7 +684,11 @@ tokens2
 | A.java:14:29:14:29 | - | - |
 | A.java:14:29:14:29 | - | char |
 | A.java:14:29:14:29 | - | classinner |
+| A.java:14:29:14:29 | - | classinner1 |
+| A.java:14:29:14:29 | - | classinner2 |
+| A.java:14:29:14:29 | - | classpart |
 | A.java:14:29:14:29 | - | classstart |
+| A.java:14:29:14:29 | - | clschar |
 | A.java:14:29:14:29 | - | orregex |
 | A.java:14:29:14:29 | - | primary |
 | A.java:14:29:14:29 | - | regex |
@@ -645,7 +719,11 @@ tokens2
 | A.java:14:33:14:33 | - | - |
 | A.java:14:33:14:33 | - | char |
 | A.java:14:33:14:33 | - | classinner |
+| A.java:14:33:14:33 | - | classinner1 |
+| A.java:14:33:14:33 | - | classinner2 |
+| A.java:14:33:14:33 | - | classpart |
 | A.java:14:33:14:33 | - | classstart |
+| A.java:14:33:14:33 | - | clschar |
 | A.java:14:33:14:33 | - | orregex |
 | A.java:14:33:14:33 | - | primary |
 | A.java:14:33:14:33 | - | regex |
@@ -662,7 +740,11 @@ tokens2
 | A.java:15:27:15:27 | - | - |
 | A.java:15:27:15:27 | - | char |
 | A.java:15:27:15:27 | - | classinner |
+| A.java:15:27:15:27 | - | classinner1 |
+| A.java:15:27:15:27 | - | classinner2 |
+| A.java:15:27:15:27 | - | classpart |
 | A.java:15:27:15:27 | - | classstart |
+| A.java:15:27:15:27 | - | clschar |
 | A.java:15:27:15:27 | - | orregex |
 | A.java:15:27:15:27 | - | primary |
 | A.java:15:27:15:27 | - | regex |
@@ -770,6 +852,139 @@ tokens2
 | A.java:16:35:16:35 | ] | primary |
 | A.java:16:35:16:35 | ] | regex |
 | A.java:16:35:16:35 | ] | seqregex |
+| A.java:17:26:17:26 | ( | ( |
+| A.java:17:26:17:26 | ( | classinner |
+| A.java:17:26:17:26 | ( | classinner1 |
+| A.java:17:26:17:26 | ( | classinner2 |
+| A.java:17:26:17:26 | ( | classpart |
+| A.java:17:26:17:26 | ( | classstart |
+| A.java:17:26:17:26 | ( | clschar |
+| A.java:17:27:17:27 | [ | [ |
+| A.java:17:28:17:28 | + | + |
+| A.java:17:28:17:28 | + | classinner |
+| A.java:17:28:17:28 | + | classinner1 |
+| A.java:17:28:17:28 | + | classinner2 |
+| A.java:17:28:17:28 | + | classpart |
+| A.java:17:28:17:28 | + | classstart |
+| A.java:17:28:17:28 | + | clschar |
+| A.java:17:29:17:29 | \| | \| |
+| A.java:17:29:17:29 | \| | classinner |
+| A.java:17:29:17:29 | \| | classinner1 |
+| A.java:17:29:17:29 | \| | classinner2 |
+| A.java:17:29:17:29 | \| | classpart |
+| A.java:17:29:17:29 | \| | classstart |
+| A.java:17:29:17:29 | \| | clschar |
+| A.java:17:30:17:30 | - | - |
+| A.java:17:30:17:30 | - | char |
+| A.java:17:30:17:30 | - | classinner |
+| A.java:17:30:17:30 | - | classinner1 |
+| A.java:17:30:17:30 | - | classinner2 |
+| A.java:17:30:17:30 | - | classpart |
+| A.java:17:30:17:30 | - | classstart |
+| A.java:17:30:17:30 | - | clschar |
+| A.java:17:30:17:30 | - | orregex |
+| A.java:17:30:17:30 | - | primary |
+| A.java:17:30:17:30 | - | regex |
+| A.java:17:30:17:30 | - | seqregex |
+| A.java:17:31:17:31 | ] | ] |
+| A.java:17:31:17:31 | ] | char |
+| A.java:17:31:17:31 | ] | classinner |
+| A.java:17:31:17:31 | ] | classstart |
+| A.java:17:31:17:31 | ] | orregex |
+| A.java:17:31:17:31 | ] | primary |
+| A.java:17:31:17:31 | ] | regex |
+| A.java:17:31:17:31 | ] | seqregex |
+| A.java:17:32:17:32 | ) | ) |
+| A.java:17:32:17:32 | ) | classinner |
+| A.java:17:32:17:32 | ) | classinner1 |
+| A.java:17:32:17:32 | ) | classinner2 |
+| A.java:17:32:17:32 | ) | classpart |
+| A.java:17:32:17:32 | ) | classstart |
+| A.java:17:32:17:32 | ) | clschar |
+| A.java:17:33:17:33 | ? | ? |
+| A.java:17:33:17:33 | ? | classinner |
+| A.java:17:33:17:33 | ? | classinner1 |
+| A.java:17:33:17:33 | ? | classinner2 |
+| A.java:17:33:17:33 | ? | classpart |
+| A.java:17:33:17:33 | ? | classstart |
+| A.java:17:33:17:33 | ? | clschar |
+| A.java:17:34:17:34 | ( | ( |
+| A.java:17:34:17:34 | ( | classinner |
+| A.java:17:34:17:34 | ( | classinner1 |
+| A.java:17:34:17:34 | ( | classinner2 |
+| A.java:17:34:17:34 | ( | classpart |
+| A.java:17:34:17:34 | ( | classstart |
+| A.java:17:34:17:34 | ( | clschar |
+| A.java:17:35:17:36 | \\d | class |
+| A.java:17:35:17:36 | \\d | classinner |
+| A.java:17:35:17:36 | \\d | classinner1 |
+| A.java:17:35:17:36 | \\d | classinner2 |
+| A.java:17:35:17:36 | \\d | classpart |
+| A.java:17:35:17:36 | \\d | classstart |
+| A.java:17:35:17:36 | \\d | escclass |
+| A.java:17:35:17:36 | \\d | orregex |
+| A.java:17:35:17:36 | \\d | primary |
+| A.java:17:35:17:36 | \\d | regex |
+| A.java:17:35:17:36 | \\d | seqregex |
+| A.java:17:37:17:37 | + | + |
+| A.java:17:37:17:37 | + | classinner |
+| A.java:17:37:17:37 | + | classinner1 |
+| A.java:17:37:17:37 | + | classinner2 |
+| A.java:17:37:17:37 | + | classpart |
+| A.java:17:37:17:37 | + | classstart |
+| A.java:17:37:17:37 | + | clschar |
+| A.java:17:38:17:38 | ) | ) |
+| A.java:17:38:17:38 | ) | classinner |
+| A.java:17:38:17:38 | ) | classinner1 |
+| A.java:17:38:17:38 | ) | classinner2 |
+| A.java:17:38:17:38 | ) | classpart |
+| A.java:17:38:17:38 | ) | classstart |
+| A.java:17:38:17:38 | ) | clschar |
+| A.java:17:39:17:39 | - | - |
+| A.java:17:39:17:39 | - | char |
+| A.java:17:39:17:39 | - | classinner |
+| A.java:17:39:17:39 | - | classinner1 |
+| A.java:17:39:17:39 | - | classinner2 |
+| A.java:17:39:17:39 | - | classpart |
+| A.java:17:39:17:39 | - | classstart |
+| A.java:17:39:17:39 | - | clschar |
+| A.java:17:39:17:39 | - | orregex |
+| A.java:17:39:17:39 | - | primary |
+| A.java:17:39:17:39 | - | regex |
+| A.java:17:39:17:39 | - | seqregex |
+| A.java:17:40:17:40 | ( | ( |
+| A.java:17:40:17:40 | ( | classinner |
+| A.java:17:40:17:40 | ( | classinner1 |
+| A.java:17:40:17:40 | ( | classinner2 |
+| A.java:17:40:17:40 | ( | classpart |
+| A.java:17:40:17:40 | ( | classstart |
+| A.java:17:40:17:40 | ( | clschar |
+| A.java:17:41:17:42 | \\d | class |
+| A.java:17:41:17:42 | \\d | classinner |
+| A.java:17:41:17:42 | \\d | classinner1 |
+| A.java:17:41:17:42 | \\d | classinner2 |
+| A.java:17:41:17:42 | \\d | classpart |
+| A.java:17:41:17:42 | \\d | classstart |
+| A.java:17:41:17:42 | \\d | escclass |
+| A.java:17:41:17:42 | \\d | orregex |
+| A.java:17:41:17:42 | \\d | primary |
+| A.java:17:41:17:42 | \\d | regex |
+| A.java:17:41:17:42 | \\d | seqregex |
+| A.java:17:43:17:43 | + | + |
+| A.java:17:43:17:43 | + | classinner |
+| A.java:17:43:17:43 | + | classinner1 |
+| A.java:17:43:17:43 | + | classinner2 |
+| A.java:17:43:17:43 | + | classpart |
+| A.java:17:43:17:43 | + | classstart |
+| A.java:17:43:17:43 | + | clschar |
+| A.java:17:44:17:44 | ) | ) |
+| A.java:17:44:17:44 | ) | classinner |
+| A.java:17:44:17:44 | ) | classinner1 |
+| A.java:17:44:17:44 | ) | classinner2 |
+| A.java:17:44:17:44 | ) | classpart |
+| A.java:17:44:17:44 | ) | classstart |
+| A.java:17:44:17:44 | ) | clschar |
+| A.java:18:26:18:26 | [ | [ |
 nodes
 | A.java:5:26:5:26 | a | normalchar |
 | A.java:5:26:5:27 | ab | classpartclassinner2 |
@@ -1046,6 +1261,8 @@ nodes
 | A.java:5:38:5:39 | kl | primaryseqregex |
 | A.java:5:39:5:39 | l | normalchar |
 | A.java:6:26:6:26 | a | normalchar |
+| A.java:6:26:6:27 | a* | classpartclassinner2 |
+| A.java:6:26:6:27 | a* | classstartclassinner1 |
 | A.java:6:26:6:27 | a* | primary* |
 | A.java:6:27:6:27 | * | * |
 | A.java:7:26:7:26 | ( | ( |
@@ -1061,10 +1278,20 @@ nodes
 | A.java:7:26:7:30 | (abc) | (regex) |
 | A.java:7:26:7:30 | (abc) | classpartclassinner2 |
 | A.java:7:26:7:30 | (abc) | classstartclassinner1 |
+| A.java:7:26:7:31 | (abc)* | classpartclassinner2 |
+| A.java:7:26:7:31 | (abc)* | classstartclassinner1 |
 | A.java:7:26:7:31 | (abc)* | primary* |
+| A.java:7:26:7:32 | (abc)*x | classpartclassinner2 |
+| A.java:7:26:7:32 | (abc)*x | classstartclassinner1 |
 | A.java:7:26:7:32 | (abc)*x | primaryseqregex |
+| A.java:7:26:7:33 | (abc)*x+ | classpartclassinner2 |
+| A.java:7:26:7:33 | (abc)*x+ | classstartclassinner1 |
 | A.java:7:26:7:33 | (abc)*x+ | primaryseqregex |
+| A.java:7:26:7:34 | (abc)*x+y | classpartclassinner2 |
+| A.java:7:26:7:34 | (abc)*x+y | classstartclassinner1 |
 | A.java:7:26:7:34 | (abc)*x+y | primaryseqregex |
+| A.java:7:26:7:35 | (abc)*x+y? | classpartclassinner2 |
+| A.java:7:26:7:35 | (abc)*x+y? | classstartclassinner1 |
 | A.java:7:26:7:35 | (abc)*x+y? | primaryseqregex |
 | A.java:7:27:7:27 | a | normalchar |
 | A.java:7:27:7:28 | ab | classpartclassinner2 |
@@ -1075,23 +1302,83 @@ nodes
 | A.java:7:27:7:29 | abc | primaryseqregex |
 | A.java:7:27:7:30 | abc) | classpartclassinner2 |
 | A.java:7:27:7:30 | abc) | classstartclassinner1 |
+| A.java:7:27:7:31 | abc)* | classpartclassinner2 |
+| A.java:7:27:7:31 | abc)* | classstartclassinner1 |
+| A.java:7:27:7:32 | abc)*x | classpartclassinner2 |
+| A.java:7:27:7:32 | abc)*x | classstartclassinner1 |
+| A.java:7:27:7:33 | abc)*x+ | classpartclassinner2 |
+| A.java:7:27:7:33 | abc)*x+ | classstartclassinner1 |
+| A.java:7:27:7:34 | abc)*x+y | classpartclassinner2 |
+| A.java:7:27:7:34 | abc)*x+y | classstartclassinner1 |
+| A.java:7:27:7:35 | abc)*x+y? | classpartclassinner2 |
+| A.java:7:27:7:35 | abc)*x+y? | classstartclassinner1 |
 | A.java:7:28:7:28 | b | normalchar |
 | A.java:7:28:7:29 | bc | classpartclassinner2 |
 | A.java:7:28:7:29 | bc | classstartclassinner1 |
 | A.java:7:28:7:29 | bc | primaryseqregex |
 | A.java:7:28:7:30 | bc) | classpartclassinner2 |
 | A.java:7:28:7:30 | bc) | classstartclassinner1 |
+| A.java:7:28:7:31 | bc)* | classpartclassinner2 |
+| A.java:7:28:7:31 | bc)* | classstartclassinner1 |
+| A.java:7:28:7:32 | bc)*x | classpartclassinner2 |
+| A.java:7:28:7:32 | bc)*x | classstartclassinner1 |
+| A.java:7:28:7:33 | bc)*x+ | classpartclassinner2 |
+| A.java:7:28:7:33 | bc)*x+ | classstartclassinner1 |
+| A.java:7:28:7:34 | bc)*x+y | classpartclassinner2 |
+| A.java:7:28:7:34 | bc)*x+y | classstartclassinner1 |
+| A.java:7:28:7:35 | bc)*x+y? | classpartclassinner2 |
+| A.java:7:28:7:35 | bc)*x+y? | classstartclassinner1 |
 | A.java:7:29:7:29 | c | normalchar |
 | A.java:7:29:7:30 | c) | classpartclassinner2 |
 | A.java:7:29:7:30 | c) | classstartclassinner1 |
+| A.java:7:29:7:31 | c)* | classpartclassinner2 |
+| A.java:7:29:7:31 | c)* | classstartclassinner1 |
+| A.java:7:29:7:32 | c)*x | classpartclassinner2 |
+| A.java:7:29:7:32 | c)*x | classstartclassinner1 |
+| A.java:7:29:7:33 | c)*x+ | classpartclassinner2 |
+| A.java:7:29:7:33 | c)*x+ | classstartclassinner1 |
+| A.java:7:29:7:34 | c)*x+y | classpartclassinner2 |
+| A.java:7:29:7:34 | c)*x+y | classstartclassinner1 |
+| A.java:7:29:7:35 | c)*x+y? | classpartclassinner2 |
+| A.java:7:29:7:35 | c)*x+y? | classstartclassinner1 |
 | A.java:7:30:7:30 | ) | ) |
+| A.java:7:30:7:31 | )* | classpartclassinner2 |
+| A.java:7:30:7:31 | )* | classstartclassinner1 |
+| A.java:7:30:7:32 | )*x | classpartclassinner2 |
+| A.java:7:30:7:32 | )*x | classstartclassinner1 |
+| A.java:7:30:7:33 | )*x+ | classpartclassinner2 |
+| A.java:7:30:7:33 | )*x+ | classstartclassinner1 |
+| A.java:7:30:7:34 | )*x+y | classpartclassinner2 |
+| A.java:7:30:7:34 | )*x+y | classstartclassinner1 |
+| A.java:7:30:7:35 | )*x+y? | classpartclassinner2 |
+| A.java:7:30:7:35 | )*x+y? | classstartclassinner1 |
 | A.java:7:31:7:31 | * | * |
+| A.java:7:31:7:32 | *x | classpartclassinner2 |
+| A.java:7:31:7:32 | *x | classstartclassinner1 |
+| A.java:7:31:7:33 | *x+ | classpartclassinner2 |
+| A.java:7:31:7:33 | *x+ | classstartclassinner1 |
+| A.java:7:31:7:34 | *x+y | classpartclassinner2 |
+| A.java:7:31:7:34 | *x+y | classstartclassinner1 |
+| A.java:7:31:7:35 | *x+y? | classpartclassinner2 |
+| A.java:7:31:7:35 | *x+y? | classstartclassinner1 |
 | A.java:7:32:7:32 | x | normalchar |
+| A.java:7:32:7:33 | x+ | classpartclassinner2 |
+| A.java:7:32:7:33 | x+ | classstartclassinner1 |
 | A.java:7:32:7:33 | x+ | primary+ |
+| A.java:7:32:7:34 | x+y | classpartclassinner2 |
+| A.java:7:32:7:34 | x+y | classstartclassinner1 |
 | A.java:7:32:7:34 | x+y | primaryseqregex |
+| A.java:7:32:7:35 | x+y? | classpartclassinner2 |
+| A.java:7:32:7:35 | x+y? | classstartclassinner1 |
 | A.java:7:32:7:35 | x+y? | primaryseqregex |
 | A.java:7:33:7:33 | + | + |
+| A.java:7:33:7:34 | +y | classpartclassinner2 |
+| A.java:7:33:7:34 | +y | classstartclassinner1 |
+| A.java:7:33:7:35 | +y? | classpartclassinner2 |
+| A.java:7:33:7:35 | +y? | classstartclassinner1 |
 | A.java:7:34:7:34 | y | normalchar |
+| A.java:7:34:7:35 | y? | classpartclassinner2 |
+| A.java:7:34:7:35 | y? | classstartclassinner1 |
 | A.java:7:34:7:35 | y? | primary? |
 | A.java:7:35:7:35 | ? | ? |
 | A.java:8:26:8:26 | ( | ( |
@@ -1103,18 +1390,24 @@ nodes
 | A.java:8:29:8:30 | \\1 | backref |
 | A.java:9:26:9:26 | [ | [ |
 | A.java:9:26:9:27 | [0 | [classinner |
+| A.java:9:26:9:28 | [0- | [classinner |
 | A.java:9:26:9:29 | [0-9 | [classinner |
 | A.java:9:26:9:30 | [0-9] | [classinner] |
 | A.java:9:26:9:31 | [0-9]+ | primary+ |
 | A.java:9:27:9:27 | 0 | normalchar |
 | A.java:9:27:9:28 | 0- | classinner2- |
+| A.java:9:27:9:28 | 0- | classpartclassinner2 |
+| A.java:9:27:9:28 | 0- | classstartclassinner1 |
 | A.java:9:27:9:28 | 0- | clschar- |
 | A.java:9:27:9:28 | 0- | primaryseqregex |
+| A.java:9:27:9:29 | 0-9 | classpartclassinner2 |
+| A.java:9:27:9:29 | 0-9 | classstartclassinner1 |
 | A.java:9:27:9:29 | 0-9 | clschar-clschar |
 | A.java:9:27:9:29 | 0-9 | primaryseqregex |
 | A.java:9:27:9:30 | 0-9] | primaryseqregex |
 | A.java:9:27:9:31 | 0-9]+ | primaryseqregex |
 | A.java:9:28:9:28 | - | - |
+| A.java:9:28:9:29 | -9 | classpartclassinner2 |
 | A.java:9:28:9:29 | -9 | classstartclassinner1 |
 | A.java:9:28:9:29 | -9 | primaryseqregex |
 | A.java:9:28:9:30 | -9] | primaryseqregex |
@@ -1123,6 +1416,7 @@ nodes
 | A.java:9:29:9:30 | 9] | primaryseqregex |
 | A.java:9:29:9:31 | 9]+ | primaryseqregex |
 | A.java:9:30:9:30 | ] | ] |
+| A.java:9:30:9:31 | ]+ | classstartclassinner1 |
 | A.java:9:30:9:31 | ]+ | primary+ |
 | A.java:9:31:9:31 | + | + |
 | A.java:10:26:10:26 | X | normalchar |
@@ -1147,8 +1441,14 @@ nodes
 | A.java:11:26:11:32 | (?:you) | (regex) |
 | A.java:11:26:11:32 | (?:you) | classpartclassinner2 |
 | A.java:11:26:11:32 | (?:you) | classstartclassinner1 |
+| A.java:11:26:11:33 | (?:you)+ | classpartclassinner2 |
+| A.java:11:26:11:33 | (?:you)+ | classstartclassinner1 |
 | A.java:11:26:11:33 | (?:you)+ | primary+ |
+| A.java:11:26:11:35 | (?:you)+\\d | classpartclassinner2 |
+| A.java:11:26:11:35 | (?:you)+\\d | classstartclassinner1 |
 | A.java:11:26:11:35 | (?:you)+\\d | primaryseqregex |
+| A.java:11:26:11:36 | (?:you)+\\d+ | classpartclassinner2 |
+| A.java:11:26:11:36 | (?:you)+\\d+ | classstartclassinner1 |
 | A.java:11:26:11:36 | (?:you)+\\d+ | primaryseqregex |
 | A.java:11:29:11:29 | y | normalchar |
 | A.java:11:29:11:30 | yo | classpartclassinner2 |
@@ -1159,21 +1459,53 @@ nodes
 | A.java:11:29:11:31 | you | primaryseqregex |
 | A.java:11:29:11:32 | you) | classpartclassinner2 |
 | A.java:11:29:11:32 | you) | classstartclassinner1 |
+| A.java:11:29:11:33 | you)+ | classpartclassinner2 |
+| A.java:11:29:11:33 | you)+ | classstartclassinner1 |
+| A.java:11:29:11:35 | you)+\\d | classpartclassinner2 |
+| A.java:11:29:11:35 | you)+\\d | classstartclassinner1 |
+| A.java:11:29:11:36 | you)+\\d+ | classpartclassinner2 |
+| A.java:11:29:11:36 | you)+\\d+ | classstartclassinner1 |
 | A.java:11:30:11:30 | o | normalchar |
 | A.java:11:30:11:31 | ou | classpartclassinner2 |
 | A.java:11:30:11:31 | ou | classstartclassinner1 |
 | A.java:11:30:11:31 | ou | primaryseqregex |
 | A.java:11:30:11:32 | ou) | classpartclassinner2 |
 | A.java:11:30:11:32 | ou) | classstartclassinner1 |
+| A.java:11:30:11:33 | ou)+ | classpartclassinner2 |
+| A.java:11:30:11:33 | ou)+ | classstartclassinner1 |
+| A.java:11:30:11:35 | ou)+\\d | classpartclassinner2 |
+| A.java:11:30:11:35 | ou)+\\d | classstartclassinner1 |
+| A.java:11:30:11:36 | ou)+\\d+ | classpartclassinner2 |
+| A.java:11:30:11:36 | ou)+\\d+ | classstartclassinner1 |
 | A.java:11:31:11:31 | u | normalchar |
 | A.java:11:31:11:32 | u) | classpartclassinner2 |
 | A.java:11:31:11:32 | u) | classstartclassinner1 |
+| A.java:11:31:11:33 | u)+ | classpartclassinner2 |
+| A.java:11:31:11:33 | u)+ | classstartclassinner1 |
+| A.java:11:31:11:35 | u)+\\d | classpartclassinner2 |
+| A.java:11:31:11:35 | u)+\\d | classstartclassinner1 |
+| A.java:11:31:11:36 | u)+\\d+ | classpartclassinner2 |
+| A.java:11:31:11:36 | u)+\\d+ | classstartclassinner1 |
 | A.java:11:32:11:32 | ) | ) |
+| A.java:11:32:11:33 | )+ | classpartclassinner2 |
+| A.java:11:32:11:33 | )+ | classstartclassinner1 |
+| A.java:11:32:11:35 | )+\\d | classpartclassinner2 |
+| A.java:11:32:11:35 | )+\\d | classstartclassinner1 |
+| A.java:11:32:11:36 | )+\\d+ | classpartclassinner2 |
+| A.java:11:32:11:36 | )+\\d+ | classstartclassinner1 |
 | A.java:11:33:11:33 | + | + |
+| A.java:11:33:11:35 | +\\d | classpartclassinner2 |
+| A.java:11:33:11:35 | +\\d | classstartclassinner1 |
+| A.java:11:33:11:36 | +\\d+ | classpartclassinner2 |
+| A.java:11:33:11:36 | +\\d+ | classstartclassinner1 |
 | A.java:11:34:11:35 | \\d | escclass |
+| A.java:11:34:11:36 | \\d+ | classpartclassinner2 |
+| A.java:11:34:11:36 | \\d+ | classstartclassinner1 |
 | A.java:11:34:11:36 | \\d+ | primary+ |
 | A.java:11:36:11:36 | + | + |
 | A.java:12:26:12:27 | \\d | escclass |
+| A.java:12:26:12:28 | \\d+ | classpartclassinner2 |
+| A.java:12:26:12:28 | \\d+ | classstartclassinner1 |
 | A.java:12:26:12:28 | \\d+ | primary+ |
 | A.java:12:26:12:37 | \\d+[:alpha:] | primaryseqregex |
 | A.java:12:28:12:28 | + | + |
@@ -1272,28 +1604,38 @@ nodes
 | A.java:13:28:13:28 | ] | ] |
 | A.java:14:26:14:27 | [^ | [^ |
 | A.java:14:26:14:28 | [^a | [^classinner |
+| A.java:14:26:14:29 | [^a- | [^classinner |
 | A.java:14:26:14:30 | [^a-z | [^classinner |
 | A.java:14:26:14:32 | [^a-z\\d | [^classinner |
 | A.java:14:26:14:33 | [^a-z\\d- | [^classinner |
 | A.java:14:26:14:34 | [^a-z\\d-] | [^classinner] |
 | A.java:14:28:14:28 | a | normalchar |
 | A.java:14:28:14:29 | a- | classinner2- |
+| A.java:14:28:14:29 | a- | classpartclassinner2 |
+| A.java:14:28:14:29 | a- | classstartclassinner1 |
 | A.java:14:28:14:29 | a- | clschar- |
 | A.java:14:28:14:29 | a- | primaryseqregex |
+| A.java:14:28:14:30 | a-z | classpartclassinner2 |
+| A.java:14:28:14:30 | a-z | classstartclassinner1 |
 | A.java:14:28:14:30 | a-z | clschar-clschar |
 | A.java:14:28:14:30 | a-z | primaryseqregex |
 | A.java:14:28:14:32 | a-z\\d | classpartclassinner2 |
 | A.java:14:28:14:32 | a-z\\d | classstartclassinner1 |
 | A.java:14:28:14:32 | a-z\\d | primaryseqregex |
 | A.java:14:28:14:33 | a-z\\d- | classinner2- |
+| A.java:14:28:14:33 | a-z\\d- | classpartclassinner2 |
 | A.java:14:28:14:33 | a-z\\d- | classstartclassinner1 |
 | A.java:14:28:14:33 | a-z\\d- | primaryseqregex |
 | A.java:14:28:14:34 | a-z\\d-] | primaryseqregex |
 | A.java:14:29:14:29 | - | - |
+| A.java:14:29:14:30 | -z | classpartclassinner2 |
 | A.java:14:29:14:30 | -z | classstartclassinner1 |
 | A.java:14:29:14:30 | -z | primaryseqregex |
+| A.java:14:29:14:32 | -z\\d | classpartclassinner2 |
 | A.java:14:29:14:32 | -z\\d | classstartclassinner1 |
 | A.java:14:29:14:32 | -z\\d | primaryseqregex |
+| A.java:14:29:14:33 | -z\\d- | classinner2- |
+| A.java:14:29:14:33 | -z\\d- | classpartclassinner2 |
 | A.java:14:29:14:33 | -z\\d- | classstartclassinner1 |
 | A.java:14:29:14:33 | -z\\d- | primaryseqregex |
 | A.java:14:29:14:34 | -z\\d-] | primaryseqregex |
@@ -1302,11 +1644,14 @@ nodes
 | A.java:14:30:14:32 | z\\d | classstartclassinner1 |
 | A.java:14:30:14:32 | z\\d | primaryseqregex |
 | A.java:14:30:14:33 | z\\d- | classinner2- |
+| A.java:14:30:14:33 | z\\d- | classpartclassinner2 |
 | A.java:14:30:14:33 | z\\d- | classstartclassinner1 |
 | A.java:14:30:14:33 | z\\d- | primaryseqregex |
 | A.java:14:30:14:34 | z\\d-] | primaryseqregex |
 | A.java:14:31:14:32 | \\d | escclass |
 | A.java:14:31:14:33 | \\d- | classinner2- |
+| A.java:14:31:14:33 | \\d- | classpartclassinner2 |
+| A.java:14:31:14:33 | \\d- | classstartclassinner1 |
 | A.java:14:31:14:33 | \\d- | primaryseqregex |
 | A.java:14:31:14:34 | \\d-] | primaryseqregex |
 | A.java:14:33:14:33 | - | - |
@@ -1319,10 +1664,13 @@ nodes
 | A.java:15:26:15:30 | [-xyz | [classinner |
 | A.java:15:26:15:31 | [-xyz] | [classinner] |
 | A.java:15:27:15:27 | - | - |
+| A.java:15:27:15:28 | -x | classpartclassinner2 |
 | A.java:15:27:15:28 | -x | classstartclassinner1 |
 | A.java:15:27:15:28 | -x | primaryseqregex |
+| A.java:15:27:15:29 | -xy | classpartclassinner2 |
 | A.java:15:27:15:29 | -xy | classstartclassinner1 |
 | A.java:15:27:15:29 | -xy | primaryseqregex |
+| A.java:15:27:15:30 | -xyz | classpartclassinner2 |
 | A.java:15:27:15:30 | -xyz | classstartclassinner1 |
 | A.java:15:27:15:30 | -xyz | primaryseqregex |
 | A.java:15:27:15:31 | -xyz] | primaryseqregex |
@@ -1365,6 +1713,184 @@ nodes
 | A.java:16:33:16:34 | \\] | normalchar |
 | A.java:16:33:16:35 | \\]] | primaryseqregex |
 | A.java:16:35:16:35 | ] | ] |
+| A.java:17:26:17:26 | ( | ( |
+| A.java:17:26:17:31 | ([+\|-] | (regex |
+| A.java:17:26:17:32 | ([+\|-]) | (regex) |
+| A.java:17:26:17:33 | ([+\|-])? | primary? |
+| A.java:17:26:17:38 | ([+\|-])?(\\d+) | primaryseqregex |
+| A.java:17:26:17:39 | ([+\|-])?(\\d+)- | primaryseqregex |
+| A.java:17:26:17:44 | ([+\|-])?(\\d+)-(\\d+) | primaryseqregex |
+| A.java:17:27:17:27 | [ | [ |
+| A.java:17:27:17:28 | [+ | [classinner |
+| A.java:17:27:17:29 | [+\| | [classinner |
+| A.java:17:27:17:30 | [+\|- | [classinner |
+| A.java:17:27:17:31 | [+\|-] | [classinner] |
+| A.java:17:28:17:28 | + | + |
+| A.java:17:28:17:29 | +\| | classpartclassinner2 |
+| A.java:17:28:17:29 | +\| | classstartclassinner1 |
+| A.java:17:28:17:30 | +\|- | classinner2- |
+| A.java:17:28:17:30 | +\|- | classpartclassinner2 |
+| A.java:17:28:17:30 | +\|- | classstartclassinner1 |
+| A.java:17:29:17:29 | \| | \| |
+| A.java:17:29:17:30 | \|- | classinner2- |
+| A.java:17:29:17:30 | \|- | classpartclassinner2 |
+| A.java:17:29:17:30 | \|- | classstartclassinner1 |
+| A.java:17:29:17:30 | \|- | clschar- |
+| A.java:17:30:17:30 | - | - |
+| A.java:17:30:17:31 | -] | primaryseqregex |
+| A.java:17:31:17:31 | ] | ] |
+| A.java:17:31:17:32 | ]) | classstartclassinner1 |
+| A.java:17:31:17:33 | ])? | classstartclassinner1 |
+| A.java:17:31:17:34 | ])?( | classstartclassinner1 |
+| A.java:17:31:17:36 | ])?(\\d | classstartclassinner1 |
+| A.java:17:31:17:37 | ])?(\\d+ | classstartclassinner1 |
+| A.java:17:31:17:38 | ])?(\\d+) | classstartclassinner1 |
+| A.java:17:31:17:39 | ])?(\\d+)- | classstartclassinner1 |
+| A.java:17:31:17:40 | ])?(\\d+)-( | classstartclassinner1 |
+| A.java:17:31:17:42 | ])?(\\d+)-(\\d | classstartclassinner1 |
+| A.java:17:31:17:43 | ])?(\\d+)-(\\d+ | classstartclassinner1 |
+| A.java:17:31:17:44 | ])?(\\d+)-(\\d+) | classstartclassinner1 |
+| A.java:17:32:17:32 | ) | ) |
+| A.java:17:32:17:33 | )? | classpartclassinner2 |
+| A.java:17:32:17:33 | )? | classstartclassinner1 |
+| A.java:17:32:17:34 | )?( | classpartclassinner2 |
+| A.java:17:32:17:34 | )?( | classstartclassinner1 |
+| A.java:17:32:17:36 | )?(\\d | classpartclassinner2 |
+| A.java:17:32:17:36 | )?(\\d | classstartclassinner1 |
+| A.java:17:32:17:37 | )?(\\d+ | classpartclassinner2 |
+| A.java:17:32:17:37 | )?(\\d+ | classstartclassinner1 |
+| A.java:17:32:17:38 | )?(\\d+) | classpartclassinner2 |
+| A.java:17:32:17:38 | )?(\\d+) | classstartclassinner1 |
+| A.java:17:32:17:39 | )?(\\d+)- | classinner2- |
+| A.java:17:32:17:39 | )?(\\d+)- | classpartclassinner2 |
+| A.java:17:32:17:39 | )?(\\d+)- | classstartclassinner1 |
+| A.java:17:32:17:40 | )?(\\d+)-( | classpartclassinner2 |
+| A.java:17:32:17:40 | )?(\\d+)-( | classstartclassinner1 |
+| A.java:17:32:17:42 | )?(\\d+)-(\\d | classpartclassinner2 |
+| A.java:17:32:17:42 | )?(\\d+)-(\\d | classstartclassinner1 |
+| A.java:17:32:17:43 | )?(\\d+)-(\\d+ | classpartclassinner2 |
+| A.java:17:32:17:43 | )?(\\d+)-(\\d+ | classstartclassinner1 |
+| A.java:17:32:17:44 | )?(\\d+)-(\\d+) | classpartclassinner2 |
+| A.java:17:32:17:44 | )?(\\d+)-(\\d+) | classstartclassinner1 |
+| A.java:17:33:17:33 | ? | ? |
+| A.java:17:33:17:34 | ?( | classpartclassinner2 |
+| A.java:17:33:17:34 | ?( | classstartclassinner1 |
+| A.java:17:33:17:36 | ?(\\d | classpartclassinner2 |
+| A.java:17:33:17:36 | ?(\\d | classstartclassinner1 |
+| A.java:17:33:17:37 | ?(\\d+ | classpartclassinner2 |
+| A.java:17:33:17:37 | ?(\\d+ | classstartclassinner1 |
+| A.java:17:33:17:38 | ?(\\d+) | classpartclassinner2 |
+| A.java:17:33:17:38 | ?(\\d+) | classstartclassinner1 |
+| A.java:17:33:17:39 | ?(\\d+)- | classinner2- |
+| A.java:17:33:17:39 | ?(\\d+)- | classpartclassinner2 |
+| A.java:17:33:17:39 | ?(\\d+)- | classstartclassinner1 |
+| A.java:17:33:17:40 | ?(\\d+)-( | classpartclassinner2 |
+| A.java:17:33:17:40 | ?(\\d+)-( | classstartclassinner1 |
+| A.java:17:33:17:42 | ?(\\d+)-(\\d | classpartclassinner2 |
+| A.java:17:33:17:42 | ?(\\d+)-(\\d | classstartclassinner1 |
+| A.java:17:33:17:43 | ?(\\d+)-(\\d+ | classpartclassinner2 |
+| A.java:17:33:17:43 | ?(\\d+)-(\\d+ | classstartclassinner1 |
+| A.java:17:33:17:44 | ?(\\d+)-(\\d+) | classpartclassinner2 |
+| A.java:17:33:17:44 | ?(\\d+)-(\\d+) | classstartclassinner1 |
+| A.java:17:34:17:34 | ( | ( |
+| A.java:17:34:17:36 | (\\d | (regex |
+| A.java:17:34:17:36 | (\\d | classpartclassinner2 |
+| A.java:17:34:17:36 | (\\d | classstartclassinner1 |
+| A.java:17:34:17:37 | (\\d+ | (regex |
+| A.java:17:34:17:37 | (\\d+ | classpartclassinner2 |
+| A.java:17:34:17:37 | (\\d+ | classstartclassinner1 |
+| A.java:17:34:17:38 | (\\d+) | (regex) |
+| A.java:17:34:17:38 | (\\d+) | classpartclassinner2 |
+| A.java:17:34:17:38 | (\\d+) | classstartclassinner1 |
+| A.java:17:34:17:39 | (\\d+)- | classinner2- |
+| A.java:17:34:17:39 | (\\d+)- | classpartclassinner2 |
+| A.java:17:34:17:39 | (\\d+)- | classstartclassinner1 |
+| A.java:17:34:17:39 | (\\d+)- | primaryseqregex |
+| A.java:17:34:17:40 | (\\d+)-( | classpartclassinner2 |
+| A.java:17:34:17:40 | (\\d+)-( | classstartclassinner1 |
+| A.java:17:34:17:42 | (\\d+)-(\\d | classpartclassinner2 |
+| A.java:17:34:17:42 | (\\d+)-(\\d | classstartclassinner1 |
+| A.java:17:34:17:43 | (\\d+)-(\\d+ | classpartclassinner2 |
+| A.java:17:34:17:43 | (\\d+)-(\\d+ | classstartclassinner1 |
+| A.java:17:34:17:44 | (\\d+)-(\\d+) | classpartclassinner2 |
+| A.java:17:34:17:44 | (\\d+)-(\\d+) | classstartclassinner1 |
+| A.java:17:34:17:44 | (\\d+)-(\\d+) | primaryseqregex |
+| A.java:17:35:17:36 | \\d | escclass |
+| A.java:17:35:17:37 | \\d+ | classpartclassinner2 |
+| A.java:17:35:17:37 | \\d+ | classstartclassinner1 |
+| A.java:17:35:17:37 | \\d+ | primary+ |
+| A.java:17:35:17:38 | \\d+) | classpartclassinner2 |
+| A.java:17:35:17:38 | \\d+) | classstartclassinner1 |
+| A.java:17:35:17:39 | \\d+)- | classinner2- |
+| A.java:17:35:17:39 | \\d+)- | classpartclassinner2 |
+| A.java:17:35:17:39 | \\d+)- | classstartclassinner1 |
+| A.java:17:35:17:40 | \\d+)-( | classpartclassinner2 |
+| A.java:17:35:17:40 | \\d+)-( | classstartclassinner1 |
+| A.java:17:35:17:42 | \\d+)-(\\d | classpartclassinner2 |
+| A.java:17:35:17:42 | \\d+)-(\\d | classstartclassinner1 |
+| A.java:17:35:17:43 | \\d+)-(\\d+ | classpartclassinner2 |
+| A.java:17:35:17:43 | \\d+)-(\\d+ | classstartclassinner1 |
+| A.java:17:35:17:44 | \\d+)-(\\d+) | classpartclassinner2 |
+| A.java:17:35:17:44 | \\d+)-(\\d+) | classstartclassinner1 |
+| A.java:17:37:17:37 | + | + |
+| A.java:17:37:17:38 | +) | classpartclassinner2 |
+| A.java:17:37:17:38 | +) | classstartclassinner1 |
+| A.java:17:37:17:39 | +)- | classinner2- |
+| A.java:17:37:17:39 | +)- | classpartclassinner2 |
+| A.java:17:37:17:39 | +)- | classstartclassinner1 |
+| A.java:17:37:17:40 | +)-( | classpartclassinner2 |
+| A.java:17:37:17:40 | +)-( | classstartclassinner1 |
+| A.java:17:37:17:42 | +)-(\\d | classpartclassinner2 |
+| A.java:17:37:17:42 | +)-(\\d | classstartclassinner1 |
+| A.java:17:37:17:43 | +)-(\\d+ | classpartclassinner2 |
+| A.java:17:37:17:43 | +)-(\\d+ | classstartclassinner1 |
+| A.java:17:37:17:44 | +)-(\\d+) | classpartclassinner2 |
+| A.java:17:37:17:44 | +)-(\\d+) | classstartclassinner1 |
+| A.java:17:38:17:38 | ) | ) |
+| A.java:17:38:17:39 | )- | classinner2- |
+| A.java:17:38:17:39 | )- | classpartclassinner2 |
+| A.java:17:38:17:39 | )- | classstartclassinner1 |
+| A.java:17:38:17:39 | )- | clschar- |
+| A.java:17:38:17:40 | )-( | classpartclassinner2 |
+| A.java:17:38:17:40 | )-( | classstartclassinner1 |
+| A.java:17:38:17:40 | )-( | clschar-clschar |
+| A.java:17:38:17:42 | )-(\\d | classpartclassinner2 |
+| A.java:17:38:17:42 | )-(\\d | classstartclassinner1 |
+| A.java:17:38:17:43 | )-(\\d+ | classpartclassinner2 |
+| A.java:17:38:17:43 | )-(\\d+ | classstartclassinner1 |
+| A.java:17:38:17:44 | )-(\\d+) | classpartclassinner2 |
+| A.java:17:38:17:44 | )-(\\d+) | classstartclassinner1 |
+| A.java:17:39:17:39 | - | - |
+| A.java:17:39:17:40 | -( | classpartclassinner2 |
+| A.java:17:39:17:40 | -( | classstartclassinner1 |
+| A.java:17:39:17:42 | -(\\d | classpartclassinner2 |
+| A.java:17:39:17:42 | -(\\d | classstartclassinner1 |
+| A.java:17:39:17:43 | -(\\d+ | classpartclassinner2 |
+| A.java:17:39:17:43 | -(\\d+ | classstartclassinner1 |
+| A.java:17:39:17:44 | -(\\d+) | classpartclassinner2 |
+| A.java:17:39:17:44 | -(\\d+) | classstartclassinner1 |
+| A.java:17:39:17:44 | -(\\d+) | primaryseqregex |
+| A.java:17:40:17:40 | ( | ( |
+| A.java:17:40:17:42 | (\\d | (regex |
+| A.java:17:40:17:42 | (\\d | classpartclassinner2 |
+| A.java:17:40:17:42 | (\\d | classstartclassinner1 |
+| A.java:17:40:17:43 | (\\d+ | (regex |
+| A.java:17:40:17:43 | (\\d+ | classpartclassinner2 |
+| A.java:17:40:17:43 | (\\d+ | classstartclassinner1 |
+| A.java:17:40:17:44 | (\\d+) | (regex) |
+| A.java:17:40:17:44 | (\\d+) | classpartclassinner2 |
+| A.java:17:40:17:44 | (\\d+) | classstartclassinner1 |
+| A.java:17:41:17:42 | \\d | escclass |
+| A.java:17:41:17:43 | \\d+ | classpartclassinner2 |
+| A.java:17:41:17:43 | \\d+ | classstartclassinner1 |
+| A.java:17:41:17:43 | \\d+ | primary+ |
+| A.java:17:41:17:44 | \\d+) | classpartclassinner2 |
+| A.java:17:41:17:44 | \\d+) | classstartclassinner1 |
+| A.java:17:43:17:43 | + | + |
+| A.java:17:43:17:44 | +) | classpartclassinner2 |
+| A.java:17:43:17:44 | +) | classstartclassinner1 |
+| A.java:17:44:17:44 | ) | ) |
+| A.java:18:26:18:26 | [ | [ |
 regexes
 | A.java:5:26:5:26 | a | normalchar |
 | A.java:5:26:5:27 | ab | primaryseqregex |
@@ -1592,6 +2118,25 @@ regexes
 | A.java:16:33:16:34 | \\] | normalchar |
 | A.java:16:33:16:35 | \\]] | primaryseqregex |
 | A.java:16:35:16:35 | ] | ] |
+| A.java:17:26:17:32 | ([+\|-]) | (regex) |
+| A.java:17:26:17:33 | ([+\|-])? | primary? |
+| A.java:17:26:17:38 | ([+\|-])?(\\d+) | primaryseqregex |
+| A.java:17:26:17:39 | ([+\|-])?(\\d+)- | primaryseqregex |
+| A.java:17:26:17:44 | ([+\|-])?(\\d+)-(\\d+) | primaryseqregex |
+| A.java:17:27:17:31 | [+\|-] | [classinner] |
+| A.java:17:30:17:30 | - | - |
+| A.java:17:30:17:31 | -] | primaryseqregex |
+| A.java:17:31:17:31 | ] | ] |
+| A.java:17:34:17:38 | (\\d+) | (regex) |
+| A.java:17:34:17:39 | (\\d+)- | primaryseqregex |
+| A.java:17:34:17:44 | (\\d+)-(\\d+) | primaryseqregex |
+| A.java:17:35:17:36 | \\d | escclass |
+| A.java:17:35:17:37 | \\d+ | primary+ |
+| A.java:17:39:17:39 | - | - |
+| A.java:17:39:17:44 | -(\\d+) | primaryseqregex |
+| A.java:17:40:17:44 | (\\d+) | (regex) |
+| A.java:17:41:17:42 | \\d | escclass |
+| A.java:17:41:17:43 | \\d+ | primary+ |
 rootRegexes
 | A.java:5:26:5:39 | abcd\|efgh\|ijkl |
 | A.java:6:26:6:27 | a* |
@@ -1605,6 +2150,7 @@ rootRegexes
 | A.java:14:26:14:34 | [^a-z\\d-] |
 | A.java:15:26:15:31 | [-xyz] |
 | A.java:16:26:16:35 | \\(\\)[()\\]] |
+| A.java:17:26:17:44 | ([+\|-])?(\\d+)-(\\d+) |
 rootedRegexes
 | A.java:5:26:5:26 | a |
 | A.java:5:26:5:29 | abcd |
@@ -1704,11 +2250,28 @@ rootedRegexes
 | A.java:16:30:16:35 | [()\\]] |
 | A.java:16:33:16:34 | \\] |
 | A.java:16:35:16:35 | ] |
+| A.java:17:26:17:32 | ([+\|-]) |
+| A.java:17:26:17:33 | ([+\|-])? |
+| A.java:17:26:17:44 | ([+\|-])?(\\d+)-(\\d+) |
+| A.java:17:27:17:31 | [+\|-] |
+| A.java:17:30:17:30 | - |
+| A.java:17:31:17:31 | ] |
+| A.java:17:34:17:38 | (\\d+) |
+| A.java:17:34:17:44 | (\\d+)-(\\d+) |
+| A.java:17:35:17:36 | \\d |
+| A.java:17:35:17:37 | \\d+ |
+| A.java:17:39:17:39 | - |
+| A.java:17:39:17:44 | -(\\d+) |
+| A.java:17:40:17:44 | (\\d+) |
+| A.java:17:41:17:42 | \\d |
+| A.java:17:41:17:43 | \\d+ |
 lengths
 | (.)\\1 | 4 |
 | (?:you)+\\d+ | 8 |
+| ([+\|-])?(\\d+)-(\\d+) | 17 |
 | (abc)*x+y? | 10 |
 | X{4}{1,3}{,1}{3,} | 5 |
+| [ | 1 |
 | [0-9]+ | 6 |
 | [-xyz] | 6 |
 | []] | 3 |
@@ -1727,6 +2290,8 @@ unboundedRegexes
 | A.java:11:26:11:33 | (?:you)+ |
 | A.java:11:34:11:36 | \\d+ |
 | A.java:12:26:12:28 | \\d+ |
+| A.java:17:35:17:37 | \\d+ |
+| A.java:17:41:17:43 | \\d+ |
 suffixRegexes
 | A.java:6:26:6:27 | a* | A.java:6:26:6:26 | a |
 | A.java:7:26:7:31 | (abc)* | A.java:7:26:7:30 | (abc) |
@@ -1741,6 +2306,9 @@ suffixRegexes
 | A.java:11:26:11:33 | (?:you)+ | A.java:11:26:11:32 | (?:you) |
 | A.java:11:34:11:36 | \\d+ | A.java:11:34:11:35 | \\d |
 | A.java:12:26:12:28 | \\d+ | A.java:12:26:12:27 | \\d |
+| A.java:17:26:17:33 | ([+\|-])? | A.java:17:26:17:32 | ([+\|-]) |
+| A.java:17:35:17:37 | \\d+ | A.java:17:35:17:36 | \\d |
+| A.java:17:41:17:43 | \\d+ | A.java:17:41:17:42 | \\d |
 rawTokens
 | (.)\\1 | 0 | ( | ( |
 | (.)\\1 | 1 | anychar | . |
@@ -1759,6 +2327,25 @@ rawTokens
 | (?:you)+\\d+ | 8 | escclass | \\d |
 | (?:you)+\\d+ | 9 | normalchar | d |
 | (?:you)+\\d+ | 10 | + | + |
+| ([+\|-])?(\\d+)-(\\d+) | 0 | ( | ( |
+| ([+\|-])?(\\d+)-(\\d+) | 1 | [ | [ |
+| ([+\|-])?(\\d+)-(\\d+) | 2 | + | + |
+| ([+\|-])?(\\d+)-(\\d+) | 3 | \| | \| |
+| ([+\|-])?(\\d+)-(\\d+) | 4 | - | - |
+| ([+\|-])?(\\d+)-(\\d+) | 5 | ] | ] |
+| ([+\|-])?(\\d+)-(\\d+) | 6 | ) | ) |
+| ([+\|-])?(\\d+)-(\\d+) | 7 | ? | ? |
+| ([+\|-])?(\\d+)-(\\d+) | 8 | ( | ( |
+| ([+\|-])?(\\d+)-(\\d+) | 9 | escclass | \\d |
+| ([+\|-])?(\\d+)-(\\d+) | 10 | normalchar | d |
+| ([+\|-])?(\\d+)-(\\d+) | 11 | + | + |
+| ([+\|-])?(\\d+)-(\\d+) | 12 | ) | ) |
+| ([+\|-])?(\\d+)-(\\d+) | 13 | - | - |
+| ([+\|-])?(\\d+)-(\\d+) | 14 | ( | ( |
+| ([+\|-])?(\\d+)-(\\d+) | 15 | escclass | \\d |
+| ([+\|-])?(\\d+)-(\\d+) | 16 | normalchar | d |
+| ([+\|-])?(\\d+)-(\\d+) | 17 | + | + |
+| ([+\|-])?(\\d+)-(\\d+) | 18 | ) | ) |
 | (abc)*x+y? | 0 | ( | ( |
 | (abc)*x+y? | 1 | normalchar | a |
 | (abc)*x+y? | 2 | normalchar | b |
@@ -1790,6 +2377,7 @@ rawTokens
 | X{4}{1,3}{,1}{3,} | 14 | normalchar | 3 |
 | X{4}{1,3}{,1}{3,} | 15 | normalchar | , |
 | X{4}{1,3}{,1}{3,} | 16 | normalchar | } |
+| [ | 0 | [ | [ |
 | [0-9]+ | 0 | [ | [ |
 | [0-9]+ | 1 | normalchar | 0 |
 | [0-9]+ | 2 | - | - |
@@ -1906,6 +2494,9 @@ captures
 | A.java:7:26:7:30 | (abc) | A.java:7:27:7:29 | abc |
 | A.java:8:26:8:28 | (.) | A.java:8:27:8:27 | . |
 | A.java:11:26:11:32 | (?:you) | A.java:11:29:11:31 | you |
+| A.java:17:26:17:32 | ([+\|-]) | A.java:17:27:17:31 | [+\|-] |
+| A.java:17:34:17:38 | (\\d+) | A.java:17:35:17:37 | \\d+ |
+| A.java:17:40:17:44 | (\\d+) | A.java:17:41:17:43 | \\d+ |
 classes
 | A.java:9:26:9:30 | [0-9] | false |
 | A.java:11:34:11:35 | \\d | false |
@@ -1916,6 +2507,9 @@ classes
 | A.java:14:31:14:32 | \\d | false |
 | A.java:15:26:15:31 | [-xyz] | false |
 | A.java:16:30:16:35 | [()\\]] | false |
+| A.java:17:27:17:31 | [+\|-] | false |
+| A.java:17:35:17:36 | \\d | false |
+| A.java:17:41:17:42 | \\d | false |
 chars
 | A.java:5:26:5:26 | a | a |
 | A.java:5:27:5:27 | b | b |
@@ -1941,8 +2535,10 @@ chars
 | A.java:11:31:11:31 | u | u |
 | A.java:16:26:16:27 | \\( | ( |
 | A.java:16:28:16:29 | \\) | ) |
+| A.java:17:39:17:39 | - | - |
 classChars
 | A.java:9:27:9:27 | 0 | 0 | A.java:9:26:9:30 | [0-9] |
+| A.java:9:28:9:28 | - | - | A.java:9:26:9:30 | [0-9] |
 | A.java:9:29:9:29 | 9 | 9 | A.java:9:26:9:30 | [0-9] |
 | A.java:12:30:12:30 | : | : | A.java:12:29:12:37 | [:alpha:] |
 | A.java:12:31:12:31 | a | a | A.java:12:29:12:37 | [:alpha:] |
@@ -1953,6 +2549,7 @@ classChars
 | A.java:12:36:12:36 | : | : | A.java:12:29:12:37 | [:alpha:] |
 | A.java:13:27:13:27 | ] | ] | A.java:13:26:13:28 | []] |
 | A.java:14:28:14:28 | a | a | A.java:14:26:14:34 | [^a-z\\d-] |
+| A.java:14:29:14:29 | - | - | A.java:14:26:14:34 | [^a-z\\d-] |
 | A.java:14:30:14:30 | z | z | A.java:14:26:14:34 | [^a-z\\d-] |
 | A.java:14:33:14:33 | - | - | A.java:14:26:14:34 | [^a-z\\d-] |
 | A.java:15:27:15:27 | - | - | A.java:15:26:15:31 | [-xyz] |
@@ -1962,11 +2559,16 @@ classChars
 | A.java:16:31:16:31 | ( | ( | A.java:16:30:16:35 | [()\\]] |
 | A.java:16:32:16:32 | ) | ) | A.java:16:30:16:35 | [()\\]] |
 | A.java:16:33:16:34 | \\] | ] | A.java:16:30:16:35 | [()\\]] |
+| A.java:17:28:17:28 | + | + | A.java:17:27:17:31 | [+\|-] |
+| A.java:17:29:17:29 | \| | \| | A.java:17:27:17:31 | [+\|-] |
+| A.java:17:30:17:30 | - | - | A.java:17:27:17:31 | [+\|-] |
 ranges
 | A.java:10:26:10:29 | X{4} | A.java:10:26:10:26 | X | 4 | 4 |
 | A.java:10:26:10:34 | X{4}{1,3} | A.java:10:26:10:29 | X{4} | 1 | 3 |
 | A.java:10:26:10:38 | X{4}{1,3}{,1} | A.java:10:26:10:34 | X{4}{1,3} | -1 | 1 |
 | A.java:10:26:10:42 | X{4}{1,3}{,1}{3,} | A.java:10:26:10:38 | X{4}{1,3}{,1} | 3 | -1 |
+unparsed
+| A.java:18:25:18:27 | "[" |
 #select
 | A.java:5:25:5:40 | "abcd\|efgh\|ijkl" | A.java:5:26:5:39 | abcd\|efgh\|ijkl |
 | A.java:6:25:6:28 | "a*" | A.java:6:26:6:27 | a* |
@@ -1980,3 +2582,4 @@ ranges
 | A.java:14:25:14:36 | "[^a-z\\\\d-]" | A.java:14:26:14:34 | [^a-z\\d-] |
 | A.java:15:25:15:32 | "[-xyz]" | A.java:15:26:15:31 | [-xyz] |
 | A.java:16:25:16:39 | "\\\\(\\\\)[()\\\\]]" | A.java:16:26:16:35 | \\(\\)[()\\]] |
+| A.java:17:25:17:47 | "([+\|-])?(\\\\d+)-(\\\\d+)" | A.java:17:26:17:44 | ([+\|-])?(\\d+)-(\\d+) |
