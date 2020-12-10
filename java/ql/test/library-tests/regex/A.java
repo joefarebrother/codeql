@@ -15,6 +15,7 @@ class A {
         Pattern.compile("[-xyz]");
         Pattern.compile("\\(\\)[()\\]]");
         Pattern.compile("([+|-])?(\\d+)-(\\d+)");
+        Pattern.compile("[.](?<x>hi)");
         Pattern.compile("["); // shouldn't parse
     }
 }

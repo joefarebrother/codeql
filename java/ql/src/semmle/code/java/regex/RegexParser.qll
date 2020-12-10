@@ -29,9 +29,9 @@ class RegexParserConfiguration extends ParserConfiguration {
     or
     regex = "\\\\[DdwWsS]" and id = "escclass"
     or
-    regex = "\\(\\?[ismxnd\\^:]" and id = "("
-    // or
-    // regex = "\\[:alpha:\\]|\\[:alnum:\\]|\\[:punct:\\]" and id = "class"
+    regex = "\\(\\?:" and id = "("
+    or
+    regex = "\\(\\?<\\w+>" and id = "("
   }
 
   /*
@@ -81,7 +81,7 @@ class RegexParserConfiguration extends ParserConfiguration {
     a in ["normalchar", "-", "]"] and
     result = "char"
     or
-    a in ["normalchar", "()|+-*?".charAt(_)] and result = "clschar"
+    a in ["normalchar", "anychar", "()|+-*?".charAt(_)] and result = "clschar"
     or
     a = "classstart" and result = "classinner"
     or
@@ -186,6 +186,10 @@ class ClassChar extends Node {
   string getChar() { result = getChar(this.getText()) }
 
   ClassRegex getClass() { result = reg }
+}
+
+class DotRegex extends Node {
+  DotRegex() { id = "anychar" and not this.getParent*() instanceof ClassRegex }
 }
 
 class ClassRange extends Node {
