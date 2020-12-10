@@ -47,4 +47,4 @@ query predicate ranges(RepeatRegex rep, Regex body, int lo, int hi) {
 }
 
 from RegexLiteral re
-select re
+select re, re.getRegex()

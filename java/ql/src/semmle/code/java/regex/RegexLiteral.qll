@@ -13,10 +13,10 @@ class RegexLiteralConfig extends DataFlow3::Configuration {
   }
 }
 
-class RegexLiteral extends ParsedString {
+class RegexLiteralValue extends ParsedString {
   StringLiteral lit;
 
-  RegexLiteral() {
+  RegexLiteralValue() {
     this = lit.getValue() and
     exists(RegexLiteralConfig cfg, DataFlow3::Node source |
       source.asExpr() = lit and
@@ -31,4 +31,14 @@ class RegexLiteral extends ParsedString {
   ) {
     lit.hasLocationInfo(file, startline, startcol - 1, endline, endcol - 1)
   }
+
+  StringLiteral getLiteral() { result = lit }
+}
+
+class RegexLiteral extends StringLiteral {
+  RegexLiteralValue val;
+
+  RegexLiteral() { val.getLiteral() = this }
+
+  Regex getRegex() { result.getText() = val and result.isRoot() }
 }
