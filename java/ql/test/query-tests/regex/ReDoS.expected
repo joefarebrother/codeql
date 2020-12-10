@@ -1,0 +1,52 @@
+| A.java:26:27:26:46 | (?:[^"\\\\]\|\\\\\\\\\|\\\\.)+ | This part of the regular expression may cause exponential backtracking on strings containing many repetitions of '\\\\\\\\'. |
+| A.java:26:50:26:69 | (?:[^'\\\\]\|\\\\\\\\\|\\\\.)+ | This part of the regular expression may cause exponential backtracking on strings containing many repetitions of '\\\\\\\\'. |
+| A.java:26:74:26:93 | (?:[^)\\\\]\|\\\\\\\\\|\\\\.)+ | This part of the regular expression may cause exponential backtracking on strings containing many repetitions of '\\\\\\\\'. |
+| A.java:38:57:38:58 | .* | This part of the regular expression may cause exponential backtracking on strings containing many repetitions of '\|$'. |
+| A.java:38:61:38:62 | .* | This part of the regular expression may cause exponential backtracking on strings containing many repetitions of '$\|'. |
+| A.java:48:30:48:31 | .* | This part of the regular expression may cause exponential backtracking on strings containing many repetitions of '#'. |
+| A.java:65:18:65:23 | [a-z]+ | This part of the regular expression may cause exponential backtracking on strings containing many repetitions of 'a'. |
+| A.java:67:46:67:57 | [a-zA-Z0-9]+ | This part of the regular expression may cause exponential backtracking on strings containing many repetitions of '0'. |
+| A.java:73:19:73:34 | [\\w#:.~>+()\\s-]+ | This part of the regular expression may cause exponential backtracking on strings containing many repetitions of '\t'. |
+| A.java:78:22:78:28 | (\\\\?.)* | This part of the regular expression may cause exponential backtracking on strings containing many repetitions of '\\\\a'. |
+| A.java:81:17:81:24 | (b\|a?b)* | This part of the regular expression may cause exponential backtracking on strings containing many repetitions of 'b'. |
+| A.java:84:17:84:24 | (a\|aa?)* | This part of the regular expression may cause exponential backtracking on strings containing many repetitions of 'a'. |
+| A.java:87:17:87:23 | (.\|\\n)* | This part of the regular expression may cause exponential backtracking on strings containing many repetitions of 'n'. |
+| A.java:90:17:90:23 | (.\|\\n)* | This part of the regular expression may cause exponential backtracking on strings containing many repetitions of 'n'. |
+| A.java:96:17:96:24 | (a\|aa?)* | This part of the regular expression may cause exponential backtracking on strings containing many repetitions of 'a'. |
+| A.java:108:18:108:26 | (.\|[^a])* | This part of the regular expression may cause exponential backtracking on strings containing many repetitions of '`'. |
+| A.java:114:18:114:26 | (b\|[^a])* | This part of the regular expression may cause exponential backtracking on strings containing many repetitions of 'b'. |
+| A.java:117:18:117:26 | (G\|[^a])* | This part of the regular expression may cause exponential backtracking on strings containing many repetitions of 'G'. |
+| A.java:120:18:120:30 | ([0-9]\|[^a])* | This part of the regular expression may cause exponential backtracking on strings containing many repetitions of '0'. |
+| A.java:132:18:132:31 | ([a-z]\|[d-h])* | This part of the regular expression may cause exponential backtracking on strings containing many repetitions of 'd'. |
+| A.java:135:18:135:33 | ([^a-z]\|[^0-9])* | This part of the regular expression may cause exponential backtracking on strings containing many repetitions of '/'. |
+| A.java:138:18:138:28 | (\\d\|[0-9])* | This part of the regular expression may cause exponential backtracking on strings containing many repetitions of '0'. |
+| A.java:141:18:141:25 | (\\s\|\\s)* | This part of the regular expression may cause exponential backtracking on strings containing many repetitions of ' '. |
+| A.java:144:18:144:24 | (\\w\|G)* | This part of the regular expression may cause exponential backtracking on strings containing many repetitions of 'G'. |
+| A.java:150:18:150:25 | (\\d\|\\w)* | This part of the regular expression may cause exponential backtracking on strings containing many repetitions of '0'. |
+| A.java:153:18:153:24 | (\\d\|5)* | This part of the regular expression may cause exponential backtracking on strings containing many repetitions of '5'. |
+| A.java:162:18:162:27 | (\\f\|[\\f])* | This part of the regular expression may cause exponential backtracking on strings containing many repetitions of 'f'. |
+| A.java:165:18:165:25 | (\\W\|\\D)* | This part of the regular expression may cause exponential backtracking on strings containing many repetitions of ' '. |
+| A.java:168:18:168:25 | (\\S\|\\w)* | This part of the regular expression may cause exponential backtracking on strings containing many repetitions of '0'. |
+| A.java:171:18:171:27 | (\\S\|[\\w])* | This part of the regular expression may cause exponential backtracking on strings containing many repetitions of '0'. |
+| A.java:174:18:174:30 | (1s\|[\\da-z])* | This part of the regular expression may cause exponential backtracking on strings containing many repetitions of '1s'. |
+| A.java:177:18:177:26 | (0\|[\\d])* | This part of the regular expression may cause exponential backtracking on strings containing many repetitions of '0'. |
+| A.java:180:19:180:23 | [\\d]+ | This part of the regular expression may cause exponential backtracking on strings containing many repetitions of '0'. |
+| A.java:189:20:189:24 | [^>]+ | This part of the regular expression may cause exponential backtracking on strings containing many repetitions of '='. |
+| A.java:192:19:192:24 | [^>a]+ | This part of the regular expression may cause exponential backtracking on strings containing many repetitions of '='. |
+| A.java:198:21:198:23 | \\s+ | This part of the regular expression may cause exponential backtracking on strings containing many repetitions of ' '. |
+| A.java:201:71:201:82 | [ a-zA-Z{}]+ | This part of the regular expression may cause exponential backtracking on strings containing many repetitions of '  A:'. |
+| A.java:201:84:201:85 | ,? | This part of the regular expression may cause exponential backtracking on strings containing many repetitions of ',A: '. |
+| A.java:204:18:204:19 | a+ | This part of the regular expression may cause exponential backtracking on strings containing many repetitions of 'a'. |
+| A.java:204:21:204:22 | b+ | This part of the regular expression may cause exponential backtracking on strings containing many repetitions of 'b'. |
+| A.java:207:20:207:21 | a+ | This part of the regular expression may cause exponential backtracking on strings containing many repetitions of 'a'. |
+| A.java:210:18:210:19 | a+ | This part of the regular expression may cause exponential backtracking on strings containing many repetitions of 'a'. |
+| A.java:216:18:216:19 | a+ | This part of the regular expression may cause exponential backtracking on strings containing many repetitions of 'a'. |
+| A.java:222:18:222:20 | \\n+ | This part of the regular expression may cause exponential backtracking on strings containing many repetitions of 'n'. |
+| A.java:225:18:225:22 | [^X]+ | This part of the regular expression may cause exponential backtracking on strings containing many repetitions of 'W'. |
+| A.java:228:23:228:23 | b | This part of the regular expression may cause exponential backtracking on strings containing many repetitions of 'bW'. |
+| A.java:234:23:234:23 | b | This part of the regular expression may cause exponential backtracking on strings containing many repetitions of 'bW'. |
+| A.java:246:20:246:20 | b | This part of the regular expression may cause exponential backtracking on strings containing many repetitions of 'ba'. |
+| A.java:261:90:261:92 | \\w* | This part of the regular expression may cause exponential backtracking on strings containing many repetitions of '0foobarbazfoobarbazfoobarbazfoobarbazfoobarbazfoobarbaz'. |
+| A.java:264:17:264:119 | (.thisisagoddamnlongstringforstresstestingthequery\|\\sthisisagoddamnlongstringforstresstestingthequery)* | This part of the regular expression may cause exponential backtracking on strings containing many repetitions of ' thisisagoddamnlongstringforstresstestingthequery'. |
+| A.java:267:17:267:80 | (thisisagoddamnlongstringforstresstestingthequery\|this\\w+query)* | This part of the regular expression may cause exponential backtracking on strings containing many repetitions of 'thisisagoddamnlongstringforstresstestingthequery'. |
+| A.java:273:21:273:52 | ([\\uDC66\\uDC67]\|[\\uDC68\\uDC69])* | This part of the regular expression may cause exponential backtracking on strings containing many repetitions of '6'. |

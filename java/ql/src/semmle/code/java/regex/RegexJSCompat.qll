@@ -23,7 +23,7 @@ class RegExpParent extends TRegExpParent {
 
   string toString() { result = "" }
 
-  predicate hasLocationInfo(string file, int startline, int endline, int startcol, int endcol) {
+  predicate hasLocationInfo(string file, int startline, int startcol, int endline, int endcol) {
     none()
   }
 }
