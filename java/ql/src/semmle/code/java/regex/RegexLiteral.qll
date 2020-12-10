@@ -16,6 +16,7 @@ class RegexLiteralConfig extends DataFlow3::Configuration {
 class RegexLiteralValue extends ParsedString {
   StringLiteral lit;
 
+  cached
   RegexLiteralValue() {
     this = lit.getValue() and
     exists(RegexLiteralConfig cfg, DataFlow3::Node source |
@@ -42,5 +43,3 @@ class RegexLiteral extends StringLiteral {
 
   Regex getRegex() { result.getText() = val and result.isRoot() }
 }
-
-predicate unp(RegexLiteral unp) { not exists(unp.getRegex()) }

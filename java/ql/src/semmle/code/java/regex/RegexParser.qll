@@ -47,10 +47,10 @@ class RegexParserConfiguration extends ParserConfiguration {
    * |      primary +
    * |      char
    * |      class
+   * |      escclass
    *
    * class -> '[' classinner ']'
    * |      '[^' classinner ']'
-   * |      escclass
    * |      '[]'  if allowed empty classes
    * |      '[^]' if allowed empty classes
    * classinner -> classstart classinner1
@@ -69,7 +69,7 @@ class RegexParserConfiguration extends ParserConfiguration {
    */
 
   override string rule(string a) {
-    a in ["char", "anychar", "backref", "class"] and
+    a in ["char", "anychar", "backref", "class", "escclass"] and
     result = "primary"
     or
     a = "primary" and result = "seqregex"
@@ -82,8 +82,6 @@ class RegexParserConfiguration extends ParserConfiguration {
     result = "char"
     or
     a in ["normalchar", "()|+-*?".charAt(_)] and result = "clschar"
-    or
-    a = "escclass" and result = "class"
     or
     a = "classstart" and result = "classinner"
     or
@@ -165,6 +163,10 @@ class ClassRegex extends Regex {
   predicate isInverted() { this.getLeftNode().getLeftNode().hasId("[^") }
 }
 
+class EscapeClassRegex extends Regex {
+  EscapeClassRegex() { id = "escclass" }
+}
+
 class ClassChar extends Node {
   ClassRegex reg;
 
@@ -243,7 +245,7 @@ class FixedRepeatRegex extends SuffixRegex, RepeatRegex {
 class UptoRepeatRegex extends SuffixRegex, RepeatRegex {
   UptoRepeatRegex() { id = "primaryuptorepeat" }
 
-  override int getLowerBound() { none() }
+  override int getLowerBound() { result = 0 }
 
   override int getUpperBound() {
     exists(string suff, string num |

@@ -522,7 +522,6 @@ tokens2
 | A.java:11:33:11:33 | + | classpart |
 | A.java:11:33:11:33 | + | classstart |
 | A.java:11:33:11:33 | + | clschar |
-| A.java:11:34:11:35 | \\d | class |
 | A.java:11:34:11:35 | \\d | classinner |
 | A.java:11:34:11:35 | \\d | classinner1 |
 | A.java:11:34:11:35 | \\d | classinner2 |
@@ -540,7 +539,6 @@ tokens2
 | A.java:11:36:11:36 | + | classpart |
 | A.java:11:36:11:36 | + | classstart |
 | A.java:11:36:11:36 | + | clschar |
-| A.java:12:26:12:27 | \\d | class |
 | A.java:12:26:12:27 | \\d | classinner |
 | A.java:12:26:12:27 | \\d | classinner1 |
 | A.java:12:26:12:27 | \\d | classinner2 |
@@ -705,7 +703,6 @@ tokens2
 | A.java:14:30:14:30 | z | primary |
 | A.java:14:30:14:30 | z | regex |
 | A.java:14:30:14:30 | z | seqregex |
-| A.java:14:31:14:32 | \\d | class |
 | A.java:14:31:14:32 | \\d | classinner |
 | A.java:14:31:14:32 | \\d | classinner1 |
 | A.java:14:31:14:32 | \\d | classinner2 |
@@ -915,7 +912,6 @@ tokens2
 | A.java:17:34:17:34 | ( | classpart |
 | A.java:17:34:17:34 | ( | classstart |
 | A.java:17:34:17:34 | ( | clschar |
-| A.java:17:35:17:36 | \\d | class |
 | A.java:17:35:17:36 | \\d | classinner |
 | A.java:17:35:17:36 | \\d | classinner1 |
 | A.java:17:35:17:36 | \\d | classinner2 |
@@ -959,7 +955,6 @@ tokens2
 | A.java:17:40:17:40 | ( | classpart |
 | A.java:17:40:17:40 | ( | classstart |
 | A.java:17:40:17:40 | ( | clschar |
-| A.java:17:41:17:42 | \\d | class |
 | A.java:17:41:17:42 | \\d | classinner |
 | A.java:17:41:17:42 | \\d | classinner1 |
 | A.java:17:41:17:42 | \\d | classinner2 |
@@ -2499,17 +2494,12 @@ captures
 | A.java:17:40:17:44 | (\\d+) | A.java:17:41:17:43 | \\d+ |
 classes
 | A.java:9:26:9:30 | [0-9] | false |
-| A.java:11:34:11:35 | \\d | false |
-| A.java:12:26:12:27 | \\d | false |
 | A.java:12:29:12:37 | [:alpha:] | false |
 | A.java:13:26:13:28 | []] | false |
 | A.java:14:26:14:34 | [^a-z\\d-] | true |
-| A.java:14:31:14:32 | \\d | false |
 | A.java:15:26:15:31 | [-xyz] | false |
 | A.java:16:30:16:35 | [()\\]] | false |
 | A.java:17:27:17:31 | [+\|-] | false |
-| A.java:17:35:17:36 | \\d | false |
-| A.java:17:41:17:42 | \\d | false |
 chars
 | A.java:5:26:5:26 | a | a |
 | A.java:5:27:5:27 | b | b |
@@ -2565,7 +2555,7 @@ classChars
 ranges
 | A.java:10:26:10:29 | X{4} | A.java:10:26:10:26 | X | 4 | 4 |
 | A.java:10:26:10:34 | X{4}{1,3} | A.java:10:26:10:29 | X{4} | 1 | 3 |
-| A.java:10:26:10:38 | X{4}{1,3}{,1} | A.java:10:26:10:34 | X{4}{1,3} | -1 | 1 |
+| A.java:10:26:10:38 | X{4}{1,3}{,1} | A.java:10:26:10:34 | X{4}{1,3} | 0 | 1 |
 | A.java:10:26:10:42 | X{4}{1,3}{,1}{3,} | A.java:10:26:10:38 | X{4}{1,3}{,1} | 3 | -1 |
 unparsed
 | A.java:18:25:18:27 | "[" |
