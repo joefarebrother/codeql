@@ -29,7 +29,7 @@ class RegexParserConfiguration extends ParserConfiguration {
     or
     regex = "\\\\[DdwWsS]" and id = "escclass"
     or
-    regex = "\\(\\?:" and id = "("
+    regex = "\\(\\?[idmsuxU-]*:" and id = "("
     or
     regex = "\\(\\?<\\w+>" and id = "("
   }
@@ -66,6 +66,18 @@ class RegexParserConfiguration extends ParserConfiguration {
    * |      classrange
    * |      escclass
    * classrange -> normalchar '-' normalchar
+   *
+   *
+   * Things that currently don't parse:
+   * - Empty regexes (as standalone empty strings, or part of a disjunction or group, e.g. `(a|)` or `()`)
+   * - Inline options, i.e. `(?s)`
+   * - Lookaheads/lookbehinds
+   * - Java specific: Nested character classes, intersecting character classes
+   *
+   * Things that parse but with the wrong semantics:
+   * - Possesive and reluctant quantifiers (`a*?` is treated as an optional regex with body `a*`)
+   * - Most escape sequences with special meanings (i.e. besides "quote the next character" or predefined character classes)
+   * - Anchors ($ and ^) (treated as literal characters)
    */
 
   override string rule(string a) {
@@ -81,7 +93,7 @@ class RegexParserConfiguration extends ParserConfiguration {
     a in ["normalchar", "-", "]"] and
     result = "char"
     or
-    a in ["normalchar", "anychar", "()|+-*?".charAt(_)] and result = "clschar"
+    a in ["normalchar", "anychar", "()|+*?".charAt(_)] and result = "clschar"
     or
     a = "classstart" and result = "classinner"
     or

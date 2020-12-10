@@ -16,6 +16,10 @@ class A {
         Pattern.compile("\\(\\)[()\\]]");
         Pattern.compile("([+|-])?(\\d+)-(\\d+)");
         Pattern.compile("[.](?<x>hi)");
+        Pattern.compile("(?s:hi.)");
         Pattern.compile("["); // shouldn't parse
+        Pattern.compile("()"); // currently doesn't parse
+        Pattern.compile("a|");
+        Pattern.compile("(?s) hi");
     }
 }
