@@ -482,7 +482,9 @@ class State extends TState {
     result = "Accept(" + repr + ")"
   }
 
-  Location getLocation() { result = repr.getLocation() }
+  predicate hasLocationInfo(string file, int startline, int endline, int startcol, int endcol) {
+    repr.hasLocationInfo(file, startline, endline, startcol, endcol)
+  }
 }
 
 class EdgeLabel extends TInputSymbol {

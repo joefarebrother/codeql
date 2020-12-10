@@ -177,6 +177,8 @@ class ClassRegex extends Regex {
 
 class EscapeClassRegex extends Regex {
   EscapeClassRegex() { id = "escclass" }
+
+  string getClass() { result = getText().charAt(1) }
 }
 
 class ClassChar extends Node {
@@ -200,7 +202,7 @@ class ClassChar extends Node {
   ClassRegex getClass() { result = reg }
 }
 
-class DotRegex extends Node {
+class DotRegex extends Regex {
   DotRegex() { id = "anychar" and not this.getParent*() instanceof ClassRegex }
 }
 
@@ -210,10 +212,6 @@ class ClassRange extends Node {
   ClassChar getLowerBound() { result = getLeftNode().getLeftNode() }
 
   ClassChar getUpperBound() { result = getRightNode() }
-}
-
-class EscClass extends Regex {
-  EscClass() { id = "escclass" }
 }
 
 class SequenceRegex extends Regex {
