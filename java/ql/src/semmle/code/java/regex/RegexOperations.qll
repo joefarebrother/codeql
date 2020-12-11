@@ -15,7 +15,7 @@ class TypePattern extends Class {
 class PatternQuoteMethod extends Method {
   PatternQuoteMethod() {
     this.getDeclaringType() instanceof TypePattern and
-    // static String quote​(String s)
+    // static String quote(String s)
     this.hasName("quote")
   }
 }
@@ -44,8 +44,8 @@ abstract class RegexCompilationCallable extends Callable {
 private class PatternCompileMethod extends RegexCompilationCallable {
   PatternCompileMethod() {
     this.getDeclaringType() instanceof TypePattern and
-    // static Pattern compile​(String regex)
-    // static Pattern compile​(String regex, int flags)
+    // static Pattern compile(String regex)
+    // static Pattern compile(String regex, int flags)
     this.hasName("compile")
   }
 
@@ -55,7 +55,7 @@ private class PatternCompileMethod extends RegexCompilationCallable {
 private class PatternMatchesMethod extends RegexCompilationCallable {
   PatternMatchesMethod() {
     this.getDeclaringType() instanceof TypePattern and
-    // static boolean matches​(String regex, CharSequence input)
+    // static boolean matches(String regex, CharSequence input)
     this.hasName("matches")
   }
 
@@ -65,7 +65,7 @@ private class PatternMatchesMethod extends RegexCompilationCallable {
 private class StringMatchesMethod extends RegexCompilationCallable {
   StringMatchesMethod() {
     this.getDeclaringType() instanceof TypeString and
-    // boolean matches​(String regex)
+    // boolean matches(String regex)
     this.hasName("matches")
   }
 
