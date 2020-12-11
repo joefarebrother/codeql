@@ -158,7 +158,7 @@ class RegExpCharacterClass extends NormalRegExpTerm {
   override P::ClassRegex node;
 
   override RegExpTerm getChild(int i) {
-    result = classPart(classChildHelper0(node.getLeftNode().getRightNode(), i))
+    result = classPart(classChildHelper(node.getLeftNode(), i))
   }
 
   predicate isInverted() { node.isInverted() }
@@ -179,50 +179,26 @@ class RegExpCharacterClass extends NormalRegExpTerm {
 }
 
 private RegExpTerm classPart(P::Node node) {
-  result = TClassChar(node) or
-  result = TClassRange(node) or
-  result = TRegExp(node.(P::EscapeClassRegex))
-}
-
-private P::Node classChildHelper0(P::Node node, int i) {
-  node.hasId("classstart") and i = 0 and result = node
-  or
-  node.getId() = "classstartclassinner1" and
+  node.hasId("classstart") and
   (
-    i = 0 and result = node.getLeftNode()
-    or
-    i > 0 and result = classChildHelper1(node.getRightNode(), i - 1)
+    result = TClassChar(node) or
+    result = TClassRange(node) or
+    result = TRegExp(node.(P::EscapeClassRegex))
   )
 }
 
-private P::Node classChildHelper1(P::Node node, int i) {
-  node.hasId("classinner2") and result = classChildHelper2(node, i)
-  or
-  node.getId() = "classinner2-" and
-  exists(P::Node left, int num |
-    left = node.getLeftNode() and
-    num = classInner2NumChild(left) and
-    (
-      i = num and
-      result = node.getRightNode()
-      or
-      i < num and
-      i >= 0 and
-      result = classChildHelper2(left, i)
-    )
+private P::Node classChildHelper(P::Node node, int i) {
+  exists(int n |
+    n = strictcount(classChildRev(node, _)) and result = classChildRev(node, n - i - 1)
   )
 }
 
-private int classInner2NumChild(P::Node node) { result = strictcount(classChildHelper2(node, _)) }
-
-private P::Node classChildHelper2(P::Node node, int i) {
-  node.hasId("classpart") and i = 0 and result = node
-  or
-  node.getId() = "classpartclassinner2" and
+private P::Node classChildRev(P::Node node, int i) {
+  node.getId() in ["openclass-", "openclassclasspart", "[classstart", "[^classstart"] and
   (
-    i = 0 and result = node.getLeftNode()
+    i = 0 and result = node.getRightNode()
     or
-    i > 0 and result = classChildHelper2(node.getRightNode(), i - 1)
+    i > 0 and result = classChildRev(node.getLeftNode(), i - 1)
   )
 }
 

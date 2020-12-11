@@ -49,23 +49,19 @@ class RegexParserConfiguration extends ParserConfiguration {
    * |      class
    * |      escclass
    *
-   * class -> '[' classinner ']'
-   * |      '[^' classinner ']'
+   * class -> openclass ']'
+   * |      openclass '-' ']'
    * |      '[]'  if allowed empty classes
    * |      '[^]' if allowed empty classes
-   * classinner -> classstart classinner1
-   * |      classstart
-   * classinner1 -> classinner2 '-'
-   * |      classinner2
-   * classinner2 -> classpart
-   * |      classpart classinner2
+   * openclass -> '[' classstart
+   * |       openclass classpart
    * classstart -> '-'
    * |      ']' if not allowed empty classes
    * |      classpart
-   * classpart -> normalchar
+   * classpart -> clschar
    * |      classrange
    * |      escclass
-   * classrange -> normalchar '-' normalchar
+   * classrange -> clschar '-' clschar
    *
    *
    * Things that currently don't parse:
@@ -95,13 +91,7 @@ class RegexParserConfiguration extends ParserConfiguration {
     or
     a in ["normalchar", "anychar", "()|+*?".charAt(_)] and result = "clschar"
     or
-    a = "classstart" and result = "classinner"
-    or
-    a = "classinner2" and result = "classinner1"
-    or
     a in ["classpart", "-"] and result = "classstart"
-    or
-    a = "classpart" and result = "classinner2"
     or
     a = "]" and not Conf::allowedEmptyClasses() and result = "classstart"
     or
@@ -127,11 +117,11 @@ class RegexParserConfiguration extends ParserConfiguration {
     or
     a in ["[", "[^"] and b = "]" and Conf::allowedEmptyClasses() and result = "class"
     or
-    a = "classstart" and b = "classinner1" and result = "classinner"
+    a in ["[", "[^"] and b = "classstart" and result = "openclass"
     or
-    a = "classpart" and b = "classinner2" and result = "classinner2"
+    a = "openclass" and b = "classpart" and result = "openclass"
     or
-    a = "classinner2" and b = "-" and result = "classinner1"
+    a = "openclass" and b = "]" and result = "class"
   }
 
   override string rule(string a, string b, string c) {
@@ -139,9 +129,7 @@ class RegexParserConfiguration extends ParserConfiguration {
     or
     a = "(" and b = "regex" and c = ")" and result = "primary"
     or
-    a = "[" and b = "classinner" and c = "]" and result = "class"
-    or
-    a = "[^" and b = "classinner" and c = "]" and result = "class"
+    a = "openclass" and b = "-" and c = "]" and result = "class"
     or
     a = "clschar" and b = "-" and c = "clschar" and result = "classrange"
   }
@@ -164,7 +152,7 @@ private string getChar(string t) {
 }
 
 class ChRegex extends Regex {
-  ChRegex() { this.hasId("char") and not this.getParent*() instanceof ClassRegex }
+  ChRegex() { this.hasId("char") and not this.getParent+() instanceof ClassRegex }
 
   string getChar() { result = getChar(this.getText()) }
 }
@@ -172,7 +160,7 @@ class ChRegex extends Regex {
 class ClassRegex extends Regex {
   ClassRegex() { this.hasId("class") }
 
-  predicate isInverted() { this.getLeftNode().getLeftNode().hasId("[^") }
+  predicate isInverted() { this.getLeftNode+().hasId("[^") }
 }
 
 class EscapeClassRegex extends Regex {
@@ -185,7 +173,7 @@ class ClassChar extends Node {
   ClassRegex reg;
 
   ClassChar() {
-    this.getParent*() = reg and
+    this.getParent+() = reg and
     (
       this.hasId("clschar")
       or
