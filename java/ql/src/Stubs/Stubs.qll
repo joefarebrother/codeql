@@ -51,20 +51,28 @@ abstract /*private*/ class GeneratedType extends RefType {
   private RefType getAnInterestingBaseType() {
     result = this.getASupertype() and
     not result instanceof TypeObject and
-    not result.getSourceDeclaration() = this
+    result.getSourceDeclaration() != this
   }
 
   private string stubBaseTypesString() {
     if exists(getAnInterestingBaseType())
     then
-      result =
-        " extends " +
-          concat(int i, RefType t |
-            t = this.getAnInterestingBaseType() and
-            (if t instanceof Class then i = 0 else i = 1)
-          |
-            stubTypeName(t), ", " order by i
+      exists(string cls, string interface, string int_kw | result = cls + int_kw + interface |
+        (
+          if exists(getAnInterestingBaseType().(Class))
+          then cls = " extends " + stubTypeName(getAnInterestingBaseType())
+          else cls = ""
+        ) and
+        (
+          if exists(getAnInterestingBaseType().(Interface))
+          then (
+            (if this instanceof Class then int_kw = " implements " else int_kw = " extends ") and
+            interface = concat(stubTypeName(getAnInterestingBaseType().(Interface)), ", ")
+          ) else (
+            int_kw = "" and interface = ""
           )
+        )
+      )
     else result = ""
   }
 
@@ -181,7 +189,6 @@ private string stubAbstract(Member m) {
     else result = ""
 }
 
-language[monotonicAggregates]
 private string stubTypeName(Type t) {
   if t instanceof PrimitiveType
   then result = t.getName()
@@ -196,8 +203,17 @@ private string stubTypeName(Type t) {
         then result = stubTypeName(t.(Array).getElementType()) + "[]"
         else
           if t instanceof RefType
-          then result = t.(RefType).getSourceDeclaration().getName() + stubGenericArguments(t)
+          then
+            result =
+              stubQualifier(t) + t.(RefType).getSourceDeclaration().getName() +
+                stubGenericArguments(t)
           else result = "<error>"
+}
+
+private string stubQualifier(RefType t) {
+  if t instanceof NestedType
+  then result = stubTypeName(t.(NestedType).getEnclosingType()) + "."
+  else result = ""
 }
 
 language[monotonicAggregates]
@@ -228,12 +244,12 @@ private string stubGenericMethodParams(Method m) {
   if m instanceof GenericMethod
   then
     result =
-      "<" +
+      " <" +
         concat(int n, TypeVariable param |
           param = m.(GenericMethod).getTypeParameter(n)
         |
           param.getName(), "," order by n
-        ) + ">"
+        ) + "> "
   else result = ""
 }
 
@@ -256,7 +272,7 @@ private string stubDefaultValue(Type t) {
       if t instanceof BooleanType
       then result = "false"
       else
-        if t instanceof IntegralType
+        if t instanceof NumericType
         then result = "0"
         else result = "<error>"
 }
@@ -271,7 +287,7 @@ private string stubParameters(Callable c) {
 }
 
 private string stubParameter(Parameter p) {
-  exists(Type t, string suff | result = stubTypeName(t) + " " + p.getName() + suff |
+  exists(Type t, string suff | result = stubTypeName(t) + suff + " " + p.getName() |
     if p.isVarargs()
     then (
       t = p.getType().(Array).getElementType() and
@@ -285,8 +301,8 @@ private string stubParameter(Parameter p) {
 private string stubMember(Member m) {
   exists(Method c | m = c |
     result =
-      "    " + stubModifiers(c) + stubTypeName(c.getReturnType()) + " " + c.getName() +
-        stubGenericMethodParams(c) + "(" + stubParameters(c) + ")" + stubImplementation(c) + "\n"
+      "    " + stubModifiers(c) + stubGenericMethodParams(c) + stubTypeName(c.getReturnType()) + " "
+        + c.getName() + "(" + stubParameters(c) + ")" + stubImplementation(c) + "\n"
   )
   or
   exists(Constructor c | m = c |

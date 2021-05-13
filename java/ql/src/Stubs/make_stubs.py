@@ -75,19 +75,42 @@ javaQueries = os.path.abspath(os.path.dirname(sys.argv[0]))
 outputBqrsFile = os.path.join(testDir, 'output.bqrs')
 outputJsonFile = os.path.join(testDir, 'output.json')
 
+dbDir = os.path.join(testDir, os.path.basename(testDir) + ".testproj")
+
+
+def print_javac_output():
+    logDir = os.path.join(dbDir, "log")
+    if not os.path.isdir(logDir):
+        print("No database logs found")
+        return
+
+    logFile = None
+    for file in os.listdir(logDir):
+        if file.startswith("javac-output"):
+            logFile = os.path.join(logDir, file)
+            break
+    else:
+        print("No javac output found")
+
+    print("\nJavac output:\n")
+
+    with open(logFile) as f:
+        for line in f:
+            b1 = line.find(']')
+            b2 = line.find(']', b1+1)
+            print(line[b2+2:], end="")
+
 
 print("Stubbing qltest in", testDir)
 
 copy_file(options0File, optionsFile)
 
-cmd = ['codeql', 'test', 'run',
-       '--show-extractor-output', '--keep-databases', testDir]
+cmd = ['codeql', 'test', 'run', '--keep-databases', testDir]
 print('Running ' + ' '.join(cmd))
 if subprocess.call(cmd):
+    print_javac_output()
     print("codeql test failed. Please fix up the test before proceeding.")
     exit(1)
-
-dbDir = os.path.join(testDir, os.path.basename(testDir) + ".testproj")
 
 if not os.path.isdir(dbDir):
     print("Expected database directory " + dbDir + " not found.")
@@ -120,9 +143,10 @@ print("Verifying stub correctness")
 
 copy_file(options1File, optionsFile)
 
-cmd = ['codeql', 'test', 'run', '--show-extractor-output', testDir]
+cmd = ['codeql', 'test', 'run', testDir]
 print('Running ' + ' '.join(cmd))
 if subprocess.call(cmd):
+    print_javac_output()
     print('\nTest failed. You may need to fix up the generated stubs.')
     exit(1)
 
