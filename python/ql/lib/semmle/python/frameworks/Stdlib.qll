@@ -2915,6 +2915,12 @@ module StdlibPrivate {
         )
       )
       or
+      // Test: / operator without type tracking step
+      exists(BinaryExprNode slash | slash.getOp() instanceof Div |
+        nodeTo.asCfgNode() = slash and
+        nodeFrom.asCfgNode() = slash.getAnOperand()
+      )
+      or
       // Export data from type
       pathlibPath().flowsTo(nodeFrom) and
       exists(DataFlow::AttrRead exportPath |
