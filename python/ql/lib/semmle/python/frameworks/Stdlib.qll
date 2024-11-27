@@ -2763,12 +2763,15 @@ module StdlibPrivate {
     or
     // Data injection
     //   Special handling of the `/` operator
-    exists(BinaryExprNode slash, DataFlow::Node pathOperand, DataFlow::TypeTracker t2 |
-      slash.getOp() instanceof Div and
-      pathOperand.asCfgNode() = slash.getAnOperand() and
-      pathlibPath(t2).flowsTo(pathOperand) and
-      t2.end()
+    // Test: Make this always a source of type tracking regardless of operands
+    exists(
+      BinaryExprNode slash //, DataFlow::Node pathOperand, DataFlow::TypeTracker t2 |
     |
+      slash.getOp() instanceof Div //and
+    |
+      // pathOperand.asCfgNode() = slash.getAnOperand() and
+      // pathlibPath(t2).flowsTo(pathOperand) and
+      // t2.end()
       t.start() and
       result.asCfgNode() = slash
     )
