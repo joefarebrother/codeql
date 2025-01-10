@@ -4540,9 +4540,7 @@ module StdlibPrivate {
           or
           input = "Argument[" + (i + 1).toString() + "].SetElement"
           or
-          exists(DataFlow::TupleElementContent tc, int j | j = tc.getIndex() |
-            input = "Argument[" + (i + 1).toString() + "].TupleElement[" + j.toString() + "]"
-          )
+          input = "Argument[" + (i + 1).toString() + "].TupleElement[any]"
           // TODO: Once we have DictKeyContent, we need to transform that into ListElementContent
         ) and
         output = "Argument[0].Parameter[" + i.toString() + "]" and
@@ -4571,9 +4569,7 @@ module StdlibPrivate {
         or
         input = "Argument[1].SetElement"
         or
-        exists(DataFlow::TupleElementContent tc, int i | i = tc.getIndex() |
-          input = "Argument[1].TupleElement[" + i.toString() + "]"
-        )
+        input = "Argument[1].TupleElement[any]"
         // TODO: Once we have DictKeyContent, we need to transform that into ListElementContent
       ) and
       (output = "Argument[0].Parameter[0]" or output = "ReturnValue.ListElement") and
@@ -4597,9 +4593,7 @@ module StdlibPrivate {
         or
         input = "Argument[0].SetElement"
         or
-        exists(DataFlow::TupleElementContent tc, int i | i = tc.getIndex() |
-          input = "Argument[0].TupleElement[" + i.toString() + "]"
-        )
+        input = "Argument[0].TupleElement[any]"
         // TODO: Once we have DictKeyContent, we need to transform that into ListElementContent
       ) and
       output = "ReturnValue.ListElement.TupleElement[1]" and
@@ -4624,9 +4618,7 @@ module StdlibPrivate {
           or
           input = "Argument[" + i.toString() + "].SetElement"
           or
-          exists(DataFlow::TupleElementContent tc, int j | j = tc.getIndex() |
-            input = "Argument[" + i.toString() + "].TupleElement[" + j.toString() + "]"
-          )
+          input = "Argument[" + i.toString() + "].TupleElement[any]"
           // TODO: Once we have DictKeyContent, we need to transform that into ListElementContent
         ) and
         output = "ReturnValue.ListElement.TupleElement[" + i.toString() + "]" and

@@ -61,7 +61,9 @@ module Input implements InputSig<Location, DataFlowImplSpecific::PythonDataFlow>
     cs = TSetElementContent() and result = "SetElement" and arg = ""
     or
     exists(int index |
-      cs = TTupleElementContent(index) and result = "TupleElement" and arg = index.toString()
+      cs = TTupleElementContent(index) and
+      result = "TupleElement" and
+      arg = [index.toString(), "any"]
     )
     or
     exists(string key |
